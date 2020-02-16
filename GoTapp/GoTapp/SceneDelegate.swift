@@ -17,11 +17,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
-        let rateViewController = RateViewController()
+        let episodeViewController = EpisodeViewController()
         
         window = UIWindow.init(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
-        window?.rootViewController = rateViewController
+        window?.rootViewController = episodeViewController
         window?.makeKeyAndVisible()
     }
 
