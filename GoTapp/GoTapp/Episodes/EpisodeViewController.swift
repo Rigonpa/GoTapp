@@ -12,6 +12,7 @@ class EpisodeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Seasons"
 
         // Do any additional setup after loading the view.
     }
@@ -21,7 +22,14 @@ class EpisodeViewController: UIViewController {
     @IBAction func openRate(_ sender: Any) {
         //Código para abrir pantalla Rate
         let rateViewController = RateViewController()
+        
+        //Para cambiar de transición en el present:
+        rateViewController.modalTransitionStyle = .crossDissolve
+        rateViewController.modalPresentationStyle = .fullScreen
+        
         self.present(rateViewController, animated: true, completion: nil)
+        //self.navigationController?.pushViewController(rateViewController, animated: true)
+        
         
     }
     

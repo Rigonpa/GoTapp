@@ -94,7 +94,7 @@
         </view>
     </objects>
     <resources>
-        <image name="EpisodeTest" width="16" height="16"/>
+        <image name="EpisodeTest" width="299" height="168"/>
         <image name="xmark.circle.fill" catalog="system" width="64" height="60"/>
     </resources>
 </document>

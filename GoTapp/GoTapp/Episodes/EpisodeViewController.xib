@@ -33,10 +33,12 @@
                         <segment title="8"/>
                     </segments>
                 </segmentedControl>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rfW-R6-oNq">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rfW-R6-oNq">
                     <rect key="frame" x="20" y="768" width="374" height="52"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="52" id="oXF-4p-m1o"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="19"/>
                     <state key="normal" title="Rate">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -49,8 +51,11 @@
             <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
             <constraints>
                 <constraint firstItem="wZm-wG-kTk" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="Jns-pl-VL1"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="rfW-R6-oNq" secondAttribute="trailing" constant="20" id="YCF-Tq-Okx"/>
                 <constraint firstItem="wZm-wG-kTk" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="44" id="d0G-vp-A1Q"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="wZm-wG-kTk" secondAttribute="trailing" constant="20" id="oUl-xh-OgJ"/>
+                <constraint firstItem="rfW-R6-oNq" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="rhS-Oa-JYP"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="rfW-R6-oNq" secondAttribute="bottom" constant="42" id="uhR-Uk-HOz"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="131.8840579710145" y="153.34821428571428"/>

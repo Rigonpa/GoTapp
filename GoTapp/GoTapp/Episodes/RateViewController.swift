@@ -26,10 +26,14 @@ class RateViewController: UIViewController {
         rateLabel.text = "Accept!"
         print("Accept!")
 //        print("Aceptando!! \(sender)")
+        
+        
+        
     }
     
     @IBAction func close(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
+        //self.navigationController?.popViewController(animated: true)
     }
 //
 //    @IBAction func fire(_ sender: Any) {

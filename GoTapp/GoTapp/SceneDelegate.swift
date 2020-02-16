@@ -21,20 +21,27 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let castViewController = CastViewController()
         let houseViewController = HouseViewController()
         let settingsViewController = SettingsViewController()
-
-        let tabBarController = UITabBarController()
-        tabBarController.viewControllers = [episodeViewController, castViewController, houseViewController, settingsViewController]
         
-        episodeViewController.tabBarItem = UITabBarItem.init(title: "Seasons", image: UIImage.init(systemName: "film.fill"), tag: 0)
-        castViewController.tabBarItem = UITabBarItem.init(title: "Cast", image: UIImage.init(systemName: "person.3.fill"), tag: 1)
-        houseViewController.tabBarItem = UITabBarItem.init(title: "Houses", image: UIImage.init(systemName: "shield.lefthalf.fill"), tag: 2)
-        settingsViewController.tabBarItem = UITabBarItem.init(title: "Settings", image: UIImage.init(systemName: "gear"), tag: 3)
+        let navigationEpisodeViewController = UINavigationController.init(rootViewController: episodeViewController)
+        let navigationCastViewController = UINavigationController.init(rootViewController: castViewController)
+        let navigationHouseViewController = UINavigationController.init(rootViewController: houseViewController)
+        let navigationSettingsViewController = UINavigationController.init(rootViewController: settingsViewController)
+        
+        let tabBarController = UITabBarController()
+        tabBarController.viewControllers = [navigationEpisodeViewController, navigationCastViewController, navigationHouseViewController, navigationSettingsViewController]
+        
+        navigationEpisodeViewController.tabBarItem = UITabBarItem.init(title: "Seasons", image: UIImage.init(systemName: "film.fill"), tag: 0)
+        navigationCastViewController.tabBarItem = UITabBarItem.init(title: "Cast", image: UIImage.init(systemName: "person.3.fill"), tag: 1)
+        navigationHouseViewController.tabBarItem = UITabBarItem.init(title: "Houses", image: UIImage.init(systemName: "shield.lefthalf.fill"), tag: 2)
+        navigationSettingsViewController.tabBarItem = UITabBarItem.init(title: "Settings", image: UIImage.init(systemName: "gear"), tag: 3)
         
         tabBarController.tabBar.barStyle = .black
         tabBarController.tabBar.isTranslucent = true
         tabBarController.tabBar.tintColor = UIColor.init(red: 235/255, green: 172/255, blue: 38/255, alpha: 1.0)
-
-
+        
+        UINavigationBar.appearance().overrideUserInterfaceStyle = .dark
+        UINavigationBar.appearance().tintColor = UIColor.init(red: 235/255, green: 172/255, blue: 38/255, alpha: 1.0)
+        
         window = UIWindow.init(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
         window?.rootViewController = tabBarController
