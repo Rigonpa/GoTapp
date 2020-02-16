@@ -25,10 +25,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let tabBarController = UITabBarController()
         tabBarController.viewControllers = [episodeViewController, castViewController, houseViewController, settingsViewController]
         
-        episodeViewController.tabBarItem = UITabBarItem.init(title: "Seasons", image: nil, tag: 0)
-        castViewController.tabBarItem = UITabBarItem.init(title: "Cast", image: nil, tag: 1)
-        houseViewController.tabBarItem = UITabBarItem.init(title: "Houses", image: nil, tag: 2)
-        settingsViewController.tabBarItem = UITabBarItem.init(title: "Settings", image: nil, tag: 3)
+        episodeViewController.tabBarItem = UITabBarItem.init(title: "Seasons", image: UIImage.init(systemName: "film.fill"), tag: 0)
+        castViewController.tabBarItem = UITabBarItem.init(title: "Cast", image: UIImage.init(systemName: "person.3.fill"), tag: 1)
+        houseViewController.tabBarItem = UITabBarItem.init(title: "Houses", image: UIImage.init(systemName: "shield.lefthalf.fill"), tag: 2)
+        settingsViewController.tabBarItem = UITabBarItem.init(title: "Settings", image: UIImage.init(systemName: "gear"), tag: 3)
         
         tabBarController.tabBar.barStyle = .black
         tabBarController.tabBar.isTranslucent = true
