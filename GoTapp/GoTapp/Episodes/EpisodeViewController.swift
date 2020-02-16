@@ -20,6 +20,8 @@ class EpisodeViewController: UIViewController {
     
     @IBAction func openRate(_ sender: Any) {
         //Código para abrir pantalla Rate
+        let rateViewController = RateViewController()
+        self.present(rateViewController, animated: true, completion: nil)
         
     }
     

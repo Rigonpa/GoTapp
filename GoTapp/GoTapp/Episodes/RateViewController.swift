@@ -19,12 +19,17 @@ class RateViewController: UIViewController {
         super.viewDidLoad()
         confirmButton.layer.cornerRadius = 4.0
         //self.rateLabel.textColor = UIColor.red
+    
     }
     
     @IBAction func confirm(_ sender: Any) {
         rateLabel.text = "Accept!"
         print("Accept!")
 //        print("Aceptando!! \(sender)")
+    }
+    
+    @IBAction func close(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
     }
 //
 //    @IBAction func fire(_ sender: Any) {

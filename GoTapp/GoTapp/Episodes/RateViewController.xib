@@ -10,7 +10,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RateViewController" customModule="GoTapp" customModuleProvider="target">
             <connections>
                 <outlet property="confirmButton" destination="x3b-YM-t8J" id="5OC-ts-wLi"/>
-                <outlet property="imageView" destination="jg0-bW-chJ" id="jdj-3M-akT"/>
+                <outlet property="imageView" destination="3Ax-VF-Myf" id="Uub-8N-tHh"/>
                 <outlet property="rateLabel" destination="Fm5-21-j3c" id="UOd-PB-Xn6"/>
                 <outlet property="view" destination="iN0-l3-epB" id="yhF-G1-cGC"/>
             </connections>
@@ -20,12 +20,6 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="EpisodeTest" translatesAutoresizingMaskIntoConstraints="NO" id="jg0-bW-chJ">
-                    <rect key="frame" x="0.0" y="166" width="414" height="278"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="278" id="Ew1-C6-Z5e"/>
-                    </constraints>
-                </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x3b-YM-t8J">
                     <rect key="frame" x="20" y="758" width="374" height="56"/>
                     <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -56,44 +50,43 @@
                     </constraints>
                     <color key="minimumTrackTintColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </slider>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sus-tB-Yjm">
-                    <rect key="frame" x="318" y="97" width="76" height="61"/>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="EpisodeTest" translatesAutoresizingMaskIntoConstraints="NO" id="3Ax-VF-Myf">
+                    <rect key="frame" x="20" y="166" width="374" height="242"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="76" id="GRm-GE-UOE"/>
-                        <constraint firstAttribute="height" constant="61" id="Qy0-GQ-bSD"/>
+                        <constraint firstAttribute="height" constant="242" id="V5D-K3-DfH"/>
                     </constraints>
-                    <state key="normal" title="Button">
-                        <color key="titleColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </state>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z09-RC-Ifd">
-                    <rect key="frame" x="20" y="97" width="76" height="61"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z09-RC-Ifd">
+                    <rect key="frame" x="45" y="67" width="74" height="59"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="61" id="mFC-d8-WCp"/>
-                        <constraint firstAttribute="width" constant="76" id="r4E-0s-keK"/>
+                        <constraint firstAttribute="width" constant="74" id="F7o-Wl-kmd"/>
+                        <constraint firstAttribute="height" constant="59" id="Wa7-nf-OTM"/>
                     </constraints>
-                    <state key="normal" title="Button">
+                    <color key="tintColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <state key="normal" image="xmark.circle.fill" catalog="system">
                         <color key="titleColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="titleShadowColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
+                    <connections>
+                        <action selector="close:" destination="-1" eventType="touchUpInside" id="Msd-fd-yJL"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
             <constraints>
+                <constraint firstItem="3Ax-VF-Myf" firstAttribute="top" secondItem="z09-RC-Ifd" secondAttribute="bottom" constant="40" id="2lp-xk-NFV"/>
                 <constraint firstItem="es5-1z-5PL" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="3OY-Vk-ovn"/>
-                <constraint firstItem="jg0-bW-chJ" firstAttribute="top" secondItem="z09-RC-Ifd" secondAttribute="bottom" constant="8" id="4Zd-lF-1TZ"/>
-                <constraint firstItem="jg0-bW-chJ" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="5Nt-US-M2v"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Sus-tB-Yjm" secondAttribute="trailing" constant="20" id="JIv-QA-AxU"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="x3b-YM-t8J" secondAttribute="bottom" constant="48" id="LLw-8y-wwP"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Fm5-21-j3c" secondAttribute="trailing" constant="20" id="R39-YI-BWh"/>
+                <constraint firstItem="z09-RC-Ifd" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="45" id="THZ-Yh-RC1"/>
+                <constraint firstItem="3Ax-VF-Myf" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="TZl-ZD-JpF"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="es5-1z-5PL" secondAttribute="trailing" constant="20" id="VWX-aw-dcA"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="x3b-YM-t8J" secondAttribute="trailing" constant="20" id="WRU-jx-XYX"/>
-                <constraint firstItem="jg0-bW-chJ" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="XDt-xc-vau"/>
-                <constraint firstItem="z09-RC-Ifd" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="53" id="dtV-ua-86I"/>
-                <constraint firstItem="Sus-tB-Yjm" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="53" id="ebi-zd-hp0"/>
-                <constraint firstItem="Fm5-21-j3c" firstAttribute="top" secondItem="jg0-bW-chJ" secondAttribute="bottom" constant="49" id="irj-yg-1kk"/>
+                <constraint firstItem="Fm5-21-j3c" firstAttribute="top" secondItem="3Ax-VF-Myf" secondAttribute="bottom" constant="85" id="YBx-On-Cae"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="3Ax-VF-Myf" secondAttribute="trailing" constant="20" id="lcz-hz-QDF"/>
+                <constraint firstItem="z09-RC-Ifd" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="23" id="mrL-jt-EVi"/>
                 <constraint firstItem="x3b-YM-t8J" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="nbX-S7-Stu"/>
                 <constraint firstItem="Fm5-21-j3c" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="15" id="p1M-pq-bVc"/>
-                <constraint firstItem="z09-RC-Ifd" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="rgM-cF-1SW"/>
                 <constraint firstItem="es5-1z-5PL" firstAttribute="top" secondItem="Fm5-21-j3c" secondAttribute="bottom" constant="16" id="zly-bW-avb"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
@@ -101,6 +94,7 @@
         </view>
     </objects>
     <resources>
-        <image name="EpisodeTest" width="298" height="169"/>
+        <image name="EpisodeTest" width="16" height="16"/>
+        <image name="xmark.circle.fill" catalog="system" width="64" height="60"/>
     </resources>
 </document>

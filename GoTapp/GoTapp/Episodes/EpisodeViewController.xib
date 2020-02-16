@@ -41,6 +41,9 @@
                     <state key="normal" title="Rate">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
+                    <connections>
+                        <action selector="openRate:" destination="-1" eventType="touchUpInside" id="qCN-7Q-deO"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
