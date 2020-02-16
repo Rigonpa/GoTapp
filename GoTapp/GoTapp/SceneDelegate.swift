@@ -18,10 +18,26 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         let episodeViewController = EpisodeViewController()
+        let castViewController = CastViewController()
+        let houseViewController = HouseViewController()
+        let settingsViewController = SettingsViewController()
+
+        let tabBarController = UITabBarController()
+        tabBarController.viewControllers = [episodeViewController, castViewController, houseViewController, settingsViewController]
         
+        episodeViewController.tabBarItem = UITabBarItem.init(title: "Seasons", image: nil, tag: 0)
+        castViewController.tabBarItem = UITabBarItem.init(title: "Cast", image: nil, tag: 1)
+        houseViewController.tabBarItem = UITabBarItem.init(title: "Houses", image: nil, tag: 2)
+        settingsViewController.tabBarItem = UITabBarItem.init(title: "Settings", image: nil, tag: 3)
+        
+        tabBarController.tabBar.barStyle = .black
+        tabBarController.tabBar.isTranslucent = true
+        tabBarController.tabBar.tintColor = UIColor.init(red: 235/255, green: 172/255, blue: 38/255, alpha: 1.0)
+
+
         window = UIWindow.init(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
-        window?.rootViewController = episodeViewController
+        window?.rootViewController = tabBarController
         window?.makeKeyAndVisible()
     }
 

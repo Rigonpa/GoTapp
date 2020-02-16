@@ -18,6 +18,12 @@
 		93B087B023F9B76E0089B585 /* EpisodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B087AE23F9B76E0089B585 /* EpisodeViewController.swift */; };
 		93B087B123F9B76E0089B585 /* EpisodeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 93B087AF23F9B76E0089B585 /* EpisodeViewController.xib */; };
 		93B087B423F9BAAB0089B585 /* Episode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B087B323F9BAAB0089B585 /* Episode.swift */; };
+		93B087B923F9CD6B0089B585 /* CastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B087B723F9CD6B0089B585 /* CastViewController.swift */; };
+		93B087BA23F9CD6B0089B585 /* CastViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 93B087B823F9CD6B0089B585 /* CastViewController.xib */; };
+		93B087BD23F9CD8E0089B585 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B087BB23F9CD8E0089B585 /* SettingsViewController.swift */; };
+		93B087BE23F9CD8E0089B585 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 93B087BC23F9CD8E0089B585 /* SettingsViewController.xib */; };
+		93B087C223F9D1C90089B585 /* HouseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B087C023F9D1C90089B585 /* HouseViewController.swift */; };
+		93B087C323F9D1C90089B585 /* HouseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 93B087C123F9D1C90089B585 /* HouseViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +61,12 @@
 		93B087AE23F9B76E0089B585 /* EpisodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeViewController.swift; sourceTree = "<group>"; };
 		93B087AF23F9B76E0089B585 /* EpisodeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EpisodeViewController.xib; sourceTree = "<group>"; };
 		93B087B323F9BAAB0089B585 /* Episode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Episode.swift; sourceTree = "<group>"; };
+		93B087B723F9CD6B0089B585 /* CastViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastViewController.swift; sourceTree = "<group>"; };
+		93B087B823F9CD6B0089B585 /* CastViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CastViewController.xib; sourceTree = "<group>"; };
+		93B087BB23F9CD8E0089B585 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		93B087BC23F9CD8E0089B585 /* SettingsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
+		93B087C023F9D1C90089B585 /* HouseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseViewController.swift; sourceTree = "<group>"; };
+		93B087C123F9D1C90089B585 /* HouseViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HouseViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,10 +117,13 @@
 		93B0877823F93B3C0089B585 /* GoTapp */ = {
 			isa = PBXGroup;
 			children = (
-				93B087B223F9BA870089B585 /* Model */,
-				93B087AD23F9B6D10089B585 /* Episodes */,
 				93B0877923F93B3C0089B585 /* AppDelegate.swift */,
 				93B0877B23F93B3C0089B585 /* SceneDelegate.swift */,
+				93B087B223F9BA870089B585 /* Model */,
+				93B087AD23F9B6D10089B585 /* Episodes */,
+				93B087B523F9CD0D0089B585 /* Cast */,
+				93B087B623F9CD1C0089B585 /* Settings */,
+				93B087BF23F9CD990089B585 /* Houses */,
 				93B0878223F93B420089B585 /* Assets.xcassets */,
 				93B0878423F93B420089B585 /* LaunchScreen.storyboard */,
 				93B0878723F93B420089B585 /* Info.plist */,
@@ -151,6 +166,33 @@
 				93B087B323F9BAAB0089B585 /* Episode.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		93B087B523F9CD0D0089B585 /* Cast */ = {
+			isa = PBXGroup;
+			children = (
+				93B087B723F9CD6B0089B585 /* CastViewController.swift */,
+				93B087B823F9CD6B0089B585 /* CastViewController.xib */,
+			);
+			path = Cast;
+			sourceTree = "<group>";
+		};
+		93B087B623F9CD1C0089B585 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				93B087BB23F9CD8E0089B585 /* SettingsViewController.swift */,
+				93B087BC23F9CD8E0089B585 /* SettingsViewController.xib */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		93B087BF23F9CD990089B585 /* Houses */ = {
+			isa = PBXGroup;
+			children = (
+				93B087C023F9D1C90089B585 /* HouseViewController.swift */,
+				93B087C123F9D1C90089B585 /* HouseViewController.xib */,
+			);
+			path = Houses;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,7 +300,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				93B087AC23F954B40089B585 /* RateViewController.xib in Resources */,
+				93B087BE23F9CD8E0089B585 /* SettingsViewController.xib in Resources */,
 				93B0878623F93B420089B585 /* LaunchScreen.storyboard in Resources */,
+				93B087BA23F9CD6B0089B585 /* CastViewController.xib in Resources */,
+				93B087C323F9D1C90089B585 /* HouseViewController.xib in Resources */,
 				93B087B123F9B76E0089B585 /* EpisodeViewController.xib in Resources */,
 				93B0878323F93B420089B585 /* Assets.xcassets in Resources */,
 			);
@@ -287,9 +332,12 @@
 			files = (
 				93B087AA23F954700089B585 /* RateViewController.swift in Sources */,
 				93B0877A23F93B3C0089B585 /* AppDelegate.swift in Sources */,
+				93B087BD23F9CD8E0089B585 /* SettingsViewController.swift in Sources */,
 				93B087B023F9B76E0089B585 /* EpisodeViewController.swift in Sources */,
 				93B087B423F9BAAB0089B585 /* Episode.swift in Sources */,
 				93B0877C23F93B3C0089B585 /* SceneDelegate.swift in Sources */,
+				93B087B923F9CD6B0089B585 /* CastViewController.swift in Sources */,
+				93B087C223F9D1C90089B585 /* HouseViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
