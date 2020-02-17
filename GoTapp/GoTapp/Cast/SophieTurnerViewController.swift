@@ -1,5 +1,5 @@
 //
-//  EmiliaClarkeViewController.swift
+//  SophieTurnerViewController.swift
 //  GoTapp
 //
 //  Created by Ricardo González Pacheco on 17/02/2020.
@@ -8,14 +8,14 @@
 
 import UIKit
 
-class EmiliaClarkViewController: UIViewController {
+class SophieTurnerViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-      
+        // Do any additional setup after loading the view.
     }
 
 
- 
+
 }
