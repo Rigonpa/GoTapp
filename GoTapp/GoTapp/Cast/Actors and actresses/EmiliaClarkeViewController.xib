@@ -80,6 +80,9 @@ Birth City: London</string>
                                     <state key="normal" title="Solo: A Star Wars Story">
                                         <color key="titleColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </state>
+                                    <connections>
+                                        <action selector="openFilm:" destination="-1" eventType="touchUpInside" id="qxp-9o-gtZ"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jts-fj-r4i">
                                     <rect key="frame" x="44" y="738" width="326" height="63"/>

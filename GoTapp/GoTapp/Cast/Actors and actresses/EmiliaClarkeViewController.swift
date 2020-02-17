@@ -16,6 +16,13 @@ class EmiliaClarkeViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-
+    @IBAction func openFilm(_ sender: Any) {
+        
+        let soloStarWarsViewController = SoloStarWarsViewController()
+        self.present(soloStarWarsViewController, animated: true, completion: nil)
+        //soloStarWarsViewController.modalTransitionStyle = .crossDissolve
+        //soloStarWarsViewController.modalPresentationStyle = .fullScreen
+    }
+    
 
 }

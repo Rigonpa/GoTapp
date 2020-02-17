@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9380278523FAF40600EBF8F9 /* SoloStarWarsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9380278323FAF40600EBF8F9 /* SoloStarWarsViewController.swift */; };
+		9380278623FAF40600EBF8F9 /* SoloStarWarsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9380278423FAF40600EBF8F9 /* SoloStarWarsViewController.xib */; };
 		93AAB51523FA979C00EA3B24 /* Actor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93AAB51423FA979C00EA3B24 /* Actor.swift */; };
 		93ABBCB023FAD2E100B27E6A /* EmiliaClarkeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93ABBCAE23FAD2E100B27E6A /* EmiliaClarkeViewController.swift */; };
 		93ABBCB123FAD2E100B27E6A /* EmiliaClarkeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 93ABBCAF23FAD2E100B27E6A /* EmiliaClarkeViewController.xib */; };
@@ -57,6 +59,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9380278323FAF40600EBF8F9 /* SoloStarWarsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoloStarWarsViewController.swift; sourceTree = "<group>"; };
+		9380278423FAF40600EBF8F9 /* SoloStarWarsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SoloStarWarsViewController.xib; sourceTree = "<group>"; };
 		93AAB51423FA979C00EA3B24 /* Actor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Actor.swift; sourceTree = "<group>"; };
 		93ABBCAE23FAD2E100B27E6A /* EmiliaClarkeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmiliaClarkeViewController.swift; sourceTree = "<group>"; };
 		93ABBCAF23FAD2E100B27E6A /* EmiliaClarkeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmiliaClarkeViewController.xib; sourceTree = "<group>"; };
@@ -120,6 +124,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9380278223FAF3D700EBF8F9 /* Films */ = {
+			isa = PBXGroup;
+			children = (
+				9380278323FAF40600EBF8F9 /* SoloStarWarsViewController.swift */,
+				9380278423FAF40600EBF8F9 /* SoloStarWarsViewController.xib */,
+			);
+			path = Films;
+			sourceTree = "<group>";
+		};
+		93ABBCC623FAF06100B27E6A /* Actors and actresses */ = {
+			isa = PBXGroup;
+			children = (
+				93ABBCAE23FAD2E100B27E6A /* EmiliaClarkeViewController.swift */,
+				93ABBCAF23FAD2E100B27E6A /* EmiliaClarkeViewController.xib */,
+				93ABBCB423FAD7ED00B27E6A /* SophieTurnerViewController.swift */,
+				93ABBCB223FAD7CE00B27E6A /* SophieTurnerViewController.xib */,
+				93ABBCB623FADA6200B27E6A /* KitHaringtonViewController.swift */,
+				93ABBCB823FADA8000B27E6A /* KitHaringtonViewController.xib */,
+				93ABBCBC23FADCBA00B27E6A /* IainGlenViewController.swift */,
+				93ABBCBA23FADCA400B27E6A /* IainGlenViewController.xib */,
+				93ABBCC023FAE5B600B27E6A /* LenaHeadeyViewController.swift */,
+				93ABBCBE23FAE5A400B27E6A /* LenaHeadeyViewController.xib */,
+				93ABBCC423FAE77700B27E6A /* PeterDinklageViewController.swift */,
+				93ABBCC223FAE75C00B27E6A /* PeterDinklageViewController.xib */,
+			);
+			path = "Actors and actresses";
+			sourceTree = "<group>";
+		};
 		93B0876D23F93B3C0089B585 = {
 			isa = PBXGroup;
 			children = (
@@ -200,18 +232,8 @@
 			children = (
 				93B087B723F9CD6B0089B585 /* CastViewController.swift */,
 				93B087B823F9CD6B0089B585 /* CastViewController.xib */,
-				93ABBCAE23FAD2E100B27E6A /* EmiliaClarkeViewController.swift */,
-				93ABBCAF23FAD2E100B27E6A /* EmiliaClarkeViewController.xib */,
-				93ABBCB423FAD7ED00B27E6A /* SophieTurnerViewController.swift */,
-				93ABBCB223FAD7CE00B27E6A /* SophieTurnerViewController.xib */,
-				93ABBCB623FADA6200B27E6A /* KitHaringtonViewController.swift */,
-				93ABBCB823FADA8000B27E6A /* KitHaringtonViewController.xib */,
-				93ABBCBC23FADCBA00B27E6A /* IainGlenViewController.swift */,
-				93ABBCBA23FADCA400B27E6A /* IainGlenViewController.xib */,
-				93ABBCC023FAE5B600B27E6A /* LenaHeadeyViewController.swift */,
-				93ABBCBE23FAE5A400B27E6A /* LenaHeadeyViewController.xib */,
-				93ABBCC423FAE77700B27E6A /* PeterDinklageViewController.swift */,
-				93ABBCC223FAE75C00B27E6A /* PeterDinklageViewController.xib */,
+				93ABBCC623FAF06100B27E6A /* Actors and actresses */,
+				9380278223FAF3D700EBF8F9 /* Films */,
 			);
 			path = Cast;
 			sourceTree = "<group>";
@@ -350,6 +372,7 @@
 				93ABBCBB23FADCA400B27E6A /* IainGlenViewController.xib in Resources */,
 				93B087C323F9D1C90089B585 /* HouseViewController.xib in Resources */,
 				93B087B123F9B76E0089B585 /* EpisodeViewController.xib in Resources */,
+				9380278623FAF40600EBF8F9 /* SoloStarWarsViewController.xib in Resources */,
 				93B0878323F93B420089B585 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -387,6 +410,7 @@
 				93ABBCB723FADA6200B27E6A /* KitHaringtonViewController.swift in Sources */,
 				93ABBCC123FAE5B600B27E6A /* LenaHeadeyViewController.swift in Sources */,
 				93B087B923F9CD6B0089B585 /* CastViewController.swift in Sources */,
+				9380278523FAF40600EBF8F9 /* SoloStarWarsViewController.swift in Sources */,
 				93ABBCB023FAD2E100B27E6A /* EmiliaClarkeViewController.swift in Sources */,
 				93B087C223F9D1C90089B585 /* HouseViewController.swift in Sources */,
 				93ABBCC523FAE77700B27E6A /* PeterDinklageViewController.swift in Sources */,
