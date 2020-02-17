@@ -15,16 +15,31 @@ class CastViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    @IBAction func openIainGlen(_ sender: Any) {
     }
-    */
-
+    @IBAction func openEmiliaClarke(_ sender: Any) {
+        
+        let emiliaClarkeVC = EmiliaClarkeViewController()
+        //self.present(actorVC, animated: true, completion: nil)
+        self.navigationController?.pushViewController(emiliaClarkeVC, animated: true)
+        emiliaClarkeVC.modalTransitionStyle = .crossDissolve
+        emiliaClarkeVC.modalPresentationStyle = .fullScreen
+        
+    }
+    @IBAction func openKitHarington(_ sender: Any) {
+    }
+    @IBAction func openConlethHill(_ sender: Any) {
+    }
+    @IBAction func openSophieTurner(_ sender: Any) {
+    }
+    @IBAction func openLenaHeadey(_ sender: Any) {
+    }
+    @IBAction func openPeterDinklage(_ sender: Any) {
+    }
+    @IBAction func openMaisieWilliams(_ sender: Any) {
+    }
+    @IBAction func openEJohnBradley(_ sender: Any) {
+    }
+    
 }

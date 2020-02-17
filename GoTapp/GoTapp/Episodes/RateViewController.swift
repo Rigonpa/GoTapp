@@ -19,6 +19,7 @@ class RateViewController: UIViewController {
         super.viewDidLoad()
         confirmButton.layer.cornerRadius = 4.0
         //self.rateLabel.textColor = UIColor.red
+        rateLabel.text = "5"
     
     }
     
@@ -26,10 +27,13 @@ class RateViewController: UIViewController {
         rateLabel.text = "Accept!"
         print("Accept!")
 //        print("Aceptando!! \(sender)")
-        
-        
-        
     }
+    
+    @IBAction func sliderMove(_ sender: UISlider) {
+        let v = Int(sender.value.rounded())
+        rateLabel.text = "\(v)"
+    }
+    
     
     @IBAction func close(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)

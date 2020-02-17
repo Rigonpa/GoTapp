@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		933927F523FACE63008B855A /* EmiliaClarkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933927F323FACE63008B855A /* EmiliaClarkViewController.swift */; };
+		933927F623FACE63008B855A /* EmiliaClarkViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 933927F423FACE63008B855A /* EmiliaClarkViewController.xib */; };
+		93AAB51523FA979C00EA3B24 /* Actor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93AAB51423FA979C00EA3B24 /* Actor.swift */; };
+		93ABBCB023FAD2E100B27E6A /* EmiliaClarkeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93ABBCAE23FAD2E100B27E6A /* EmiliaClarkeViewController.swift */; };
+		93ABBCB123FAD2E100B27E6A /* EmiliaClarkeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 93ABBCAF23FAD2E100B27E6A /* EmiliaClarkeViewController.xib */; };
 		93B0877A23F93B3C0089B585 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B0877923F93B3C0089B585 /* AppDelegate.swift */; };
 		93B0877C23F93B3C0089B585 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B0877B23F93B3C0089B585 /* SceneDelegate.swift */; };
 		93B0878323F93B420089B585 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93B0878223F93B420089B585 /* Assets.xcassets */; };
@@ -44,6 +49,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		933927F323FACE63008B855A /* EmiliaClarkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmiliaClarkViewController.swift; sourceTree = "<group>"; };
+		933927F423FACE63008B855A /* EmiliaClarkViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmiliaClarkViewController.xib; sourceTree = "<group>"; };
+		93AAB51423FA979C00EA3B24 /* Actor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Actor.swift; sourceTree = "<group>"; };
+		93ABBCAE23FAD2E100B27E6A /* EmiliaClarkeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmiliaClarkeViewController.swift; sourceTree = "<group>"; };
+		93ABBCAF23FAD2E100B27E6A /* EmiliaClarkeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmiliaClarkeViewController.xib; sourceTree = "<group>"; };
 		93B0877623F93B3C0089B585 /* GoTapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoTapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93B0877923F93B3C0089B585 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		93B0877B23F93B3C0089B585 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -164,6 +174,7 @@
 			isa = PBXGroup;
 			children = (
 				93B087B323F9BAAB0089B585 /* Episode.swift */,
+				93AAB51423FA979C00EA3B24 /* Actor.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -173,6 +184,10 @@
 			children = (
 				93B087B723F9CD6B0089B585 /* CastViewController.swift */,
 				93B087B823F9CD6B0089B585 /* CastViewController.xib */,
+				933927F323FACE63008B855A /* EmiliaClarkViewController.swift */,
+				933927F423FACE63008B855A /* EmiliaClarkViewController.xib */,
+				93ABBCAE23FAD2E100B27E6A /* EmiliaClarkeViewController.swift */,
+				93ABBCAF23FAD2E100B27E6A /* EmiliaClarkeViewController.xib */,
 			);
 			path = Cast;
 			sourceTree = "<group>";
@@ -300,7 +315,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				93B087AC23F954B40089B585 /* RateViewController.xib in Resources */,
+				933927F623FACE63008B855A /* EmiliaClarkViewController.xib in Resources */,
 				93B087BE23F9CD8E0089B585 /* SettingsViewController.xib in Resources */,
+				93ABBCB123FAD2E100B27E6A /* EmiliaClarkeViewController.xib in Resources */,
 				93B0878623F93B420089B585 /* LaunchScreen.storyboard in Resources */,
 				93B087BA23F9CD6B0089B585 /* CastViewController.xib in Resources */,
 				93B087C323F9D1C90089B585 /* HouseViewController.xib in Resources */,
@@ -336,7 +353,10 @@
 				93B087B023F9B76E0089B585 /* EpisodeViewController.swift in Sources */,
 				93B087B423F9BAAB0089B585 /* Episode.swift in Sources */,
 				93B0877C23F93B3C0089B585 /* SceneDelegate.swift in Sources */,
+				93AAB51523FA979C00EA3B24 /* Actor.swift in Sources */,
 				93B087B923F9CD6B0089B585 /* CastViewController.swift in Sources */,
+				933927F523FACE63008B855A /* EmiliaClarkViewController.swift in Sources */,
+				93ABBCB023FAD2E100B27E6A /* EmiliaClarkeViewController.swift in Sources */,
 				93B087C223F9D1C90089B585 /* HouseViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
