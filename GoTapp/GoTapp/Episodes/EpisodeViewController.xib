@@ -9,6 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EpisodeViewController" customModule="GoTapp" customModuleProvider="target">
             <connections>
+                <outlet property="tableView" destination="g2m-xQ-SZE" id="iRG-lJ-4a0"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -33,29 +34,20 @@
                         <segment title="8"/>
                     </segments>
                 </segmentedControl>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rfW-R6-oNq">
-                    <rect key="frame" x="20" y="768" width="374" height="52"/>
-                    <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="52" id="oXF-4p-m1o"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="19"/>
-                    <state key="normal" title="Rate">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </state>
-                    <connections>
-                        <action selector="openRate:" destination="-1" eventType="touchUpInside" id="qCN-7Q-deO"/>
-                    </connections>
-                </button>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="g2m-xQ-SZE">
+                    <rect key="frame" x="0.0" y="143" width="414" height="719"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                </tableView>
             </subviews>
             <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
             <constraints>
                 <constraint firstItem="wZm-wG-kTk" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="Jns-pl-VL1"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="rfW-R6-oNq" secondAttribute="trailing" constant="20" id="YCF-Tq-Okx"/>
+                <constraint firstItem="g2m-xQ-SZE" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Ngf-ie-cfG"/>
                 <constraint firstItem="wZm-wG-kTk" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="44" id="d0G-vp-A1Q"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="wZm-wG-kTk" secondAttribute="trailing" constant="20" id="oUl-xh-OgJ"/>
-                <constraint firstItem="rfW-R6-oNq" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="rhS-Oa-JYP"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="rfW-R6-oNq" secondAttribute="bottom" constant="42" id="uhR-Uk-HOz"/>
+                <constraint firstItem="g2m-xQ-SZE" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="rU3-Pg-APV"/>
+                <constraint firstItem="g2m-xQ-SZE" firstAttribute="top" secondItem="wZm-wG-kTk" secondAttribute="bottom" constant="24" id="t56-Dh-kRJ"/>
+                <constraint firstItem="g2m-xQ-SZE" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="vfd-uQ-B2Q"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="131.8840579710145" y="153.34821428571428"/>

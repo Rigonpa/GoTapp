@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9388A1A223FBF883005834C3 /* EpisodeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9388A1A123FBF882005834C3 /* EpisodeTableViewCell.swift */; };
+		9388A1A423FBF94F005834C3 /* EpisodeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9388A1A323FBF94F005834C3 /* EpisodeTableViewCell.xib */; };
 		93B0877A23F93B3C0089B585 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B0877923F93B3C0089B585 /* AppDelegate.swift */; };
 		93B0877C23F93B3C0089B585 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B0877B23F93B3C0089B585 /* SceneDelegate.swift */; };
 		93B0878323F93B420089B585 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93B0878223F93B420089B585 /* Assets.xcassets */; };
@@ -44,6 +46,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9388A1A123FBF882005834C3 /* EpisodeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeTableViewCell.swift; sourceTree = "<group>"; };
+		9388A1A323FBF94F005834C3 /* EpisodeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EpisodeTableViewCell.xib; sourceTree = "<group>"; };
 		93B0877623F93B3C0089B585 /* GoTapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoTapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93B0877923F93B3C0089B585 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		93B0877B23F93B3C0089B585 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -156,6 +160,8 @@
 				93B087AB23F954B40089B585 /* RateViewController.xib */,
 				93B087AE23F9B76E0089B585 /* EpisodeViewController.swift */,
 				93B087AF23F9B76E0089B585 /* EpisodeViewController.xib */,
+				9388A1A123FBF882005834C3 /* EpisodeTableViewCell.swift */,
+				9388A1A323FBF94F005834C3 /* EpisodeTableViewCell.xib */,
 			);
 			path = Episodes;
 			sourceTree = "<group>";
@@ -304,6 +310,7 @@
 				93B0878623F93B420089B585 /* LaunchScreen.storyboard in Resources */,
 				93B087BA23F9CD6B0089B585 /* CastViewController.xib in Resources */,
 				93B087C323F9D1C90089B585 /* HouseViewController.xib in Resources */,
+				9388A1A423FBF94F005834C3 /* EpisodeTableViewCell.xib in Resources */,
 				93B087B123F9B76E0089B585 /* EpisodeViewController.xib in Resources */,
 				93B0878323F93B420089B585 /* Assets.xcassets in Resources */,
 			);
@@ -330,6 +337,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9388A1A223FBF883005834C3 /* EpisodeTableViewCell.swift in Sources */,
 				93B087AA23F954700089B585 /* RateViewController.swift in Sources */,
 				93B0877A23F93B3C0089B585 /* AppDelegate.swift in Sources */,
 				93B087BD23F9CD8E0089B585 /* SettingsViewController.swift in Sources */,
