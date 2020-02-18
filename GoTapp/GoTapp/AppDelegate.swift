@@ -26,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func applicationDidEnterBackground(_ application: UIApplication) {
-        print("Me acaban de mandar al fondo del móvil. Vaya tela")
+        print("Me acaban de mandar al fondo del móvil")
     }
 
     // MARK: UISceneSession Lifecycle
