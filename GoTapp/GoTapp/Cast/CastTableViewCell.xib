@@ -54,6 +54,7 @@
                         <constraints>
                             <constraint firstAttribute="width" constant="49" id="eEW-LC-hWp"/>
                         </constraints>
+                        <color key="tintColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <state key="normal" image="heart" catalog="system"/>
                     </button>
                 </subviews>

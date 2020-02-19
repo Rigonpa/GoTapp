@@ -1,5 +1,6 @@
+
 //
-//  DataController.swift
+//  House.swift
 //  GoTapp
 //
 //  Created by Ricardo González Pacheco on 19/02/2020.
@@ -8,9 +9,10 @@
 
 import Foundation
 
-class DataController {
+struct House {
+    var name: String
+    var words: String
+    var shield: String
+    var seat: String
     
-    static var shared = DataController()
-    
-    //private init()
 }
