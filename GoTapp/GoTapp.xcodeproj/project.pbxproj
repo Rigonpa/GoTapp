@@ -33,6 +33,8 @@
 		93B087C223F9D1C90089B585 /* HouseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B087C023F9D1C90089B585 /* HouseViewController.swift */; };
 		93B087C323F9D1C90089B585 /* HouseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 93B087C123F9D1C90089B585 /* HouseViewController.xib */; };
 		93B4FB0123FD6CA6007DB0C5 /* HouseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B4FB0023FD6CA6007DB0C5 /* HouseTableViewCell.swift */; };
+		93B4FB0523FD6F34007DB0C5 /* HouseDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B4FB0323FD6F34007DB0C5 /* HouseDetailViewController.swift */; };
+		93B4FB0623FD6F34007DB0C5 /* HouseDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 93B4FB0423FD6F34007DB0C5 /* HouseDetailViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +87,8 @@
 		93B087C023F9D1C90089B585 /* HouseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseViewController.swift; sourceTree = "<group>"; };
 		93B087C123F9D1C90089B585 /* HouseViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HouseViewController.xib; sourceTree = "<group>"; };
 		93B4FB0023FD6CA6007DB0C5 /* HouseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseTableViewCell.swift; sourceTree = "<group>"; };
+		93B4FB0323FD6F34007DB0C5 /* HouseDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseDetailViewController.swift; sourceTree = "<group>"; };
+		93B4FB0423FD6F34007DB0C5 /* HouseDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HouseDetailViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -218,8 +222,18 @@
 				93B087C123F9D1C90089B585 /* HouseViewController.xib */,
 				93B4FB0023FD6CA6007DB0C5 /* HouseTableViewCell.swift */,
 				9386493423FD3F8E00F24072 /* HouseTableViewCell.xib */,
+				93B4FB0323FD6F34007DB0C5 /* HouseDetailViewController.swift */,
+				93B4FB0423FD6F34007DB0C5 /* HouseDetailViewController.xib */,
+				93B4FB0223FD6EEB007DB0C5 /* HouseDetail */,
 			);
 			path = Houses;
+			sourceTree = "<group>";
+		};
+		93B4FB0223FD6EEB007DB0C5 /* HouseDetail */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = HouseDetail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -330,6 +344,7 @@
 				93B087BE23F9CD8E0089B585 /* SettingsViewController.xib in Resources */,
 				9386492D23FCB1B800F24072 /* CastTableViewCell.xib in Resources */,
 				93B0878623F93B420089B585 /* LaunchScreen.storyboard in Resources */,
+				93B4FB0623FD6F34007DB0C5 /* HouseDetailViewController.xib in Resources */,
 				93B087BA23F9CD6B0089B585 /* CastViewController.xib in Resources */,
 				93B087C323F9D1C90089B585 /* HouseViewController.xib in Resources */,
 				9386493523FD3F8E00F24072 /* HouseTableViewCell.xib in Resources */,
@@ -365,6 +380,7 @@
 				9386493123FCC8B000F24072 /* DataController.swift in Sources */,
 				93B087AA23F954700089B585 /* RateViewController.swift in Sources */,
 				93B0877A23F93B3C0089B585 /* AppDelegate.swift in Sources */,
+				93B4FB0523FD6F34007DB0C5 /* HouseDetailViewController.swift in Sources */,
 				93B087BD23F9CD8E0089B585 /* SettingsViewController.swift in Sources */,
 				93B087B023F9B76E0089B585 /* EpisodeViewController.swift in Sources */,
 				93B087B423F9BAAB0089B585 /* Episode.swift in Sources */,

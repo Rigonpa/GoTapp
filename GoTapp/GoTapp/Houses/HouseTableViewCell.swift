@@ -14,6 +14,7 @@ class HouseTableViewCell: UITableViewCell {
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var words: UILabel!
     @IBOutlet weak var seat: UILabel!
+  
     
     override func awakeFromNib() {
         

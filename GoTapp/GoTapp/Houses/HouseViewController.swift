@@ -10,11 +10,13 @@ import UIKit
 
 class HouseViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupUI()
+
     }
 
     func setupUI() {
@@ -43,6 +45,9 @@ class HouseViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let name = houses[indexPath.row].name
+        let houseDetailVC = HouseDetailViewController.init(title: name)
+        self.navigationController?.pushViewController(houseDetailVC, animated: true)
         tableView.deselectRow(at: indexPath, animated: true)
     }
 
