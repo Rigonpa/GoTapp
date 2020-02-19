@@ -51,6 +51,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
+                <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                 <constraints>
                     <constraint firstItem="VO4-Re-swE" firstAttribute="top" secondItem="Zwn-x1-SJX" secondAttribute="bottom" constant="11" id="4sh-bL-Jy5"/>
                     <constraint firstItem="QXm-3l-DhK" firstAttribute="leading" secondItem="2T0-uR-m09" secondAttribute="trailing" constant="14" id="5Os-fp-V7o"/>
@@ -66,13 +67,14 @@
                 </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+            <color key="tintColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
             <connections>
                 <outlet property="date" destination="Zwn-x1-SJX" id="cWG-zr-MEo"/>
                 <outlet property="rateButton" destination="VO4-Re-swE" id="DwV-Y9-z3h"/>
                 <outlet property="thumb" destination="2T0-uR-m09" id="AHl-Hf-U8l"/>
                 <outlet property="title" destination="QXm-3l-DhK" id="uGS-0r-zMQ"/>
             </connections>
-            <point key="canvasLocation" x="106.5217391304348" y="-40.513392857142854"/>
+            <point key="canvasLocation" x="-105" y="-39"/>
         </tableViewCell>
     </objects>
 </document>

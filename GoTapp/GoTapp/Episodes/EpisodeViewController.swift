@@ -56,6 +56,9 @@ class EpisodeViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "EpisodeTableViewCell", for: indexPath) as? EpisodeTableViewCell {
+            // El VC ya tiene la celda. Pero está vacía. Ahora toca cargarla antes de pasársela a la tabla. Lo hacemos con una función que creamos .setEpisode
+            let ep = episodes[indexPath.row]
+            cell.setEpisode(ep)
             return cell
         }
         fatalError("Could not create Episode cell")

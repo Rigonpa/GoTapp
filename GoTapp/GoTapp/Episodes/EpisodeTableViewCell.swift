@@ -22,4 +22,10 @@ class EpisodeTableViewCell: UITableViewCell {
         rateButton.layer.cornerRadius = 15
     }
     
+    func setEpisode(_ episode: Episode){
+        thumb.image = UIImage.init(named: episode.image ?? "")
+        title.text = episode.name
+        date.text = episode.date
+    }
+    
 }
