@@ -20,14 +20,15 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ylu-uW-id3">
-                    <rect key="frame" x="0.0" y="44" width="414" height="435"/>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ylu-uW-id3">
+                    <rect key="frame" x="0.0" y="44" width="414" height="395"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="435" id="aO6-8f-pUC"/>
+                        <constraint firstAttribute="height" constant="395" id="6cI-Y0-elr"/>
+                        <constraint firstAttribute="width" constant="414" id="Npy-OA-Lpm"/>
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Seat" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FQm-rj-SwK">
-                    <rect key="frame" x="20" y="520" width="374" height="30"/>
+                    <rect key="frame" x="20" y="488" width="374" height="30"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="jxg-BD-kQb"/>
                     </constraints>
@@ -36,7 +37,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="A grey direwolf on a white field" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="xdi-jm-SdD">
-                    <rect key="frame" x="20" y="554" width="374" height="49"/>
+                    <rect key="frame" x="20" y="522" width="374" height="49"/>
                     <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="49" id="HeJ-06-JPj"/>
@@ -46,7 +47,7 @@
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Words" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VVt-FR-HS2">
-                    <rect key="frame" x="20" y="608" width="374" height="30"/>
+                    <rect key="frame" x="20" y="576" width="374" height="30"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="EK2-hM-0IK"/>
                     </constraints>
@@ -55,7 +56,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="3on-56-Uux">
-                    <rect key="frame" x="20" y="645" width="374" height="90"/>
+                    <rect key="frame" x="20" y="613" width="374" height="90"/>
                     <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="90" id="2Iz-K4-1am"/>
@@ -69,20 +70,19 @@
             </subviews>
             <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
             <constraints>
-                <constraint firstItem="Ylu-uW-id3" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="B3Z-jX-efd"/>
                 <constraint firstItem="xdi-jm-SdD" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="Cjh-gw-Idr"/>
                 <constraint firstItem="VVt-FR-HS2" firstAttribute="top" secondItem="xdi-jm-SdD" secondAttribute="bottom" constant="5" id="I1b-Kx-ved"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="xdi-jm-SdD" secondAttribute="trailing" constant="20" id="KHd-ov-uMh"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="3on-56-Uux" secondAttribute="trailing" constant="20" id="LCo-Zm-nZK"/>
                 <constraint firstItem="3on-56-Uux" firstAttribute="top" secondItem="VVt-FR-HS2" secondAttribute="bottom" constant="7" id="MUs-ji-uD9"/>
-                <constraint firstItem="FQm-rj-SwK" firstAttribute="top" secondItem="Ylu-uW-id3" secondAttribute="bottom" constant="41" id="QDl-7U-5bN"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="FQm-rj-SwK" secondAttribute="trailing" constant="20" id="Qa0-VL-VTy"/>
                 <constraint firstItem="VVt-FR-HS2" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="U5G-qI-bfC"/>
-                <constraint firstItem="Ylu-uW-id3" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="bbb-yT-nwJ"/>
                 <constraint firstItem="xdi-jm-SdD" firstAttribute="top" secondItem="FQm-rj-SwK" secondAttribute="bottom" constant="4" id="dKb-Mu-fSi"/>
-                <constraint firstItem="Ylu-uW-id3" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="frv-c3-EKr"/>
+                <constraint firstItem="FQm-rj-SwK" firstAttribute="top" secondItem="Ylu-uW-id3" secondAttribute="bottom" constant="49" id="fa8-rk-lFe"/>
                 <constraint firstItem="3on-56-Uux" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="mnh-OH-tBY"/>
+                <constraint firstItem="Ylu-uW-id3" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="nqN-xv-lc5"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="VVt-FR-HS2" secondAttribute="trailing" constant="20" id="q3v-Np-6lT"/>
+                <constraint firstItem="Ylu-uW-id3" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="ycF-0f-ddJ"/>
                 <constraint firstItem="FQm-rj-SwK" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="yeS-a1-8YA"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
