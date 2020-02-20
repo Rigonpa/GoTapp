@@ -224,16 +224,8 @@
 				9386493423FD3F8E00F24072 /* HouseTableViewCell.xib */,
 				93B4FB0323FD6F34007DB0C5 /* HouseDetailViewController.swift */,
 				93B4FB0423FD6F34007DB0C5 /* HouseDetailViewController.xib */,
-				93B4FB0223FD6EEB007DB0C5 /* HouseDetail */,
 			);
 			path = Houses;
-			sourceTree = "<group>";
-		};
-		93B4FB0223FD6EEB007DB0C5 /* HouseDetail */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = HouseDetail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

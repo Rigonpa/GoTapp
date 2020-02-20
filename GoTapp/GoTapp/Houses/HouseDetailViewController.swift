@@ -1,5 +1,5 @@
 //
-//  StarkHouseDetailViewController.swift
+//  HouseDetailViewController.swift
 //  GoTapp
 //
 //  Created by Ricardo González Pacheco on 19/02/2020.
@@ -11,10 +11,14 @@ import UIKit
 class HouseDetailViewController: UIViewController {
 
     @IBOutlet weak var shield: UIImageView!
+    @IBOutlet weak var words: UITextView!
+    @IBOutlet weak var seat: UITextView!
+    var house: House?
     
-    convenience init(title: String?) {
+    convenience init(house: House?) {
         self.init(nibName: "HouseDetailViewController", bundle: nil)
-        self.title = title
+        self.title = house?.name
+        self.house = house
     }
     
     
@@ -22,6 +26,10 @@ class HouseDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         shield.image = UIImage.init(named: self.title!)
+        //shield.image = UIImage.init(named: house?.name ?? "")
+        words.text = house?.words
+        seat.text = house?.seat     
+        
     }
 
 

@@ -50,6 +50,8 @@
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
+                <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                <color key="tintColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="vn0-6y-avo" secondAttribute="bottom" constant="35" id="0iS-hw-7Ro"/>
                     <constraint firstAttribute="trailingMargin" secondItem="UZZ-Dp-lUF" secondAttribute="trailing" constant="63" id="56r-n2-wuj"/>
