@@ -38,7 +38,6 @@ class RateViewController: UIViewController {
         super.viewDidLoad()
         confirmButton.layer.cornerRadius = 4.0
         //self.rateLabel.textColor = UIColor.red
-        
     }
     
     

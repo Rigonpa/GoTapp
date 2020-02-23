@@ -13,10 +13,34 @@ class EpisodeViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     @IBOutlet weak var tableView: UITableView!
     
+//    var episodes: [Episode] = [Episode.init(id: 56, name: "Winter is Coming", date: "April 17, 2011", image: "episodeTest", episode: 1, season: 1, overview: "Jon Arryn, the Hand of the King, is dead. King Robert…")]
+    var episodes: [Episode] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupUI()
         self.setupNotifications()
+        self.setupData(1)
+    }
+    
+    deinit {
+           let noteName = Notification.Name.init(rawValue: "DidFavoriteUpdated")
+           NotificationCenter.default.removeObserver(self, name: noteName, object: nil)
+       }
+    
+    func setupData(_ seasonNumber: Int) {
+        if let pathURL = Bundle.main.url(forResource: "season_\(seasonNumber)", withExtension: "json") {
+            do {
+        let data = try Data.init(contentsOf: pathURL) // Este try con exclamación está obligando a que haga la operación si o si.
+        let decoder = JSONDecoder()
+        episodes = try decoder.decode([Episode].self, from: data)
+        self.tableView.reloadData()
+            } catch {
+                fatalError(error.localizedDescription)
+            }
+        } else {
+            fatalError("Could not build de path url")
+        }
     }
     
     func setupUI() {
@@ -31,17 +55,18 @@ class EpisodeViewController: UIViewController, UITableViewDelegate, UITableViewD
         
     }
     
-    deinit {
-        let noteName = Notification.Name.init(rawValue: "DidFavoriteUpdated")
-        NotificationCenter.default.removeObserver(self, name: noteName, object: nil)
-    }
-    
     func setupNotifications() {
         let noteName = Notification.Name.init(rawValue: "DidFavoriteUpdated")
         NotificationCenter.default.addObserver(self, selector: #selector(self.didFavoriteChanged), name: noteName, object: nil)
     }
     
-    var episodes: [Episode] = [Episode.init(id: 56, name: "Winter is Coming", date: "April 17, 2011", image: "episodeTest", episode: 1, season: 1, overview: "Jon Arryn, the Hand of the King, is dead. King Robert…")]
+    // MARK: - IBActions
+    
+    @IBAction func seasonChanged(_ sender: UISegmentedControl) {
+        let seasonNumber = sender.selectedSegmentIndex + 1
+        self.setupData(seasonNumber)
+    }
+    
     
     // MARK: - RateViewControllerCellDelegate
     
@@ -49,7 +74,7 @@ class EpisodeViewController: UIViewController, UITableViewDelegate, UITableViewD
         self.tableView.reloadData()
     }
     
-    // MARK: - DelegateViewControllerCellDelegate
+    // MARK: - EpisodeViewControllerCellDelegate
 
     @objc func didFavoriteChanged() {
         self.tableView.reloadData()

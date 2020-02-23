@@ -8,6 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		932DAE5A23FED1CD00A29053 /* Rating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932DAE5923FED1CD00A29053 /* Rating.swift */; };
+		9341611124032A790070FC30 /* season_5.json in Resources */ = {isa = PBXBuildFile; fileRef = 9341610724032A780070FC30 /* season_5.json */; };
+		9341611224032A790070FC30 /* houses.json in Resources */ = {isa = PBXBuildFile; fileRef = 9341610824032A780070FC30 /* houses.json */; };
+		9341611324032A790070FC30 /* season_2.json in Resources */ = {isa = PBXBuildFile; fileRef = 9341610924032A790070FC30 /* season_2.json */; };
+		9341611424032A790070FC30 /* season_6.json in Resources */ = {isa = PBXBuildFile; fileRef = 9341610A24032A790070FC30 /* season_6.json */; };
+		9341611524032A790070FC30 /* cast.json in Resources */ = {isa = PBXBuildFile; fileRef = 9341610B24032A790070FC30 /* cast.json */; };
+		9341611624032A790070FC30 /* season_8.json in Resources */ = {isa = PBXBuildFile; fileRef = 9341610C24032A790070FC30 /* season_8.json */; };
+		9341611724032A790070FC30 /* season_1.json in Resources */ = {isa = PBXBuildFile; fileRef = 9341610D24032A790070FC30 /* season_1.json */; };
+		9341611824032A790070FC30 /* season_7.json in Resources */ = {isa = PBXBuildFile; fileRef = 9341610E24032A790070FC30 /* season_7.json */; };
+		9341611924032A790070FC30 /* season_4.json in Resources */ = {isa = PBXBuildFile; fileRef = 9341610F24032A790070FC30 /* season_4.json */; };
+		9341611A24032A790070FC30 /* season_3.json in Resources */ = {isa = PBXBuildFile; fileRef = 9341611024032A790070FC30 /* season_3.json */; };
 		93634F5F23FD49220032A66F /* House.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93634F5E23FD49220032A66F /* House.swift */; };
 		9386492B23FCB18300F24072 /* CastTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9386492A23FCB18300F24072 /* CastTableViewCell.swift */; };
 		9386492D23FCB1B800F24072 /* CastTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9386492C23FCB1B800F24072 /* CastTableViewCell.xib */; };
@@ -57,6 +67,16 @@
 
 /* Begin PBXFileReference section */
 		932DAE5923FED1CD00A29053 /* Rating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rating.swift; sourceTree = "<group>"; };
+		9341610724032A780070FC30 /* season_5.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = season_5.json; path = jsons/season_5.json; sourceTree = "<group>"; };
+		9341610824032A780070FC30 /* houses.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = houses.json; path = jsons/houses.json; sourceTree = "<group>"; };
+		9341610924032A790070FC30 /* season_2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = season_2.json; path = jsons/season_2.json; sourceTree = "<group>"; };
+		9341610A24032A790070FC30 /* season_6.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = season_6.json; path = jsons/season_6.json; sourceTree = "<group>"; };
+		9341610B24032A790070FC30 /* cast.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = cast.json; path = jsons/cast.json; sourceTree = "<group>"; };
+		9341610C24032A790070FC30 /* season_8.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = season_8.json; path = jsons/season_8.json; sourceTree = "<group>"; };
+		9341610D24032A790070FC30 /* season_1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = season_1.json; path = jsons/season_1.json; sourceTree = "<group>"; };
+		9341610E24032A790070FC30 /* season_7.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = season_7.json; path = jsons/season_7.json; sourceTree = "<group>"; };
+		9341610F24032A790070FC30 /* season_4.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = season_4.json; path = jsons/season_4.json; sourceTree = "<group>"; };
+		9341611024032A790070FC30 /* season_3.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = season_3.json; path = jsons/season_3.json; sourceTree = "<group>"; };
 		93634F5E23FD49220032A66F /* House.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = House.swift; sourceTree = "<group>"; };
 		9386492A23FCB18300F24072 /* CastTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastTableViewCell.swift; sourceTree = "<group>"; };
 		9386492C23FCB1B800F24072 /* CastTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CastTableViewCell.xib; sourceTree = "<group>"; };
@@ -150,6 +170,16 @@
 				93B087B623F9CD1C0089B585 /* Settings */,
 				93B087BF23F9CD990089B585 /* Houses */,
 				93B0878223F93B420089B585 /* Assets.xcassets */,
+				9341610B24032A790070FC30 /* cast.json */,
+				9341610824032A780070FC30 /* houses.json */,
+				9341610D24032A790070FC30 /* season_1.json */,
+				9341610924032A790070FC30 /* season_2.json */,
+				9341611024032A790070FC30 /* season_3.json */,
+				9341610F24032A790070FC30 /* season_4.json */,
+				9341610724032A780070FC30 /* season_5.json */,
+				9341610A24032A790070FC30 /* season_6.json */,
+				9341610E24032A790070FC30 /* season_7.json */,
+				9341610C24032A790070FC30 /* season_8.json */,
 				93B0878423F93B420089B585 /* LaunchScreen.storyboard */,
 				93B0878723F93B420089B585 /* Info.plist */,
 			);
@@ -336,15 +366,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				93B087AC23F954B40089B585 /* RateViewController.xib in Resources */,
+				9341611A24032A790070FC30 /* season_3.json in Resources */,
+				9341611924032A790070FC30 /* season_4.json in Resources */,
+				9341611624032A790070FC30 /* season_8.json in Resources */,
+				9341611424032A790070FC30 /* season_6.json in Resources */,
 				93B087BE23F9CD8E0089B585 /* SettingsViewController.xib in Resources */,
+				9341611724032A790070FC30 /* season_1.json in Resources */,
 				9386492D23FCB1B800F24072 /* CastTableViewCell.xib in Resources */,
+				9341611324032A790070FC30 /* season_2.json in Resources */,
 				93B0878623F93B420089B585 /* LaunchScreen.storyboard in Resources */,
 				93B4FB0623FD6F34007DB0C5 /* HouseDetailViewController.xib in Resources */,
 				93B087BA23F9CD6B0089B585 /* CastViewController.xib in Resources */,
 				93B087C323F9D1C90089B585 /* HouseViewController.xib in Resources */,
 				9386493523FD3F8E00F24072 /* HouseTableViewCell.xib in Resources */,
 				9388A1A423FBF94F005834C3 /* EpisodeTableViewCell.xib in Resources */,
+				9341611824032A790070FC30 /* season_7.json in Resources */,
 				93B087B123F9B76E0089B585 /* EpisodeViewController.xib in Resources */,
+				9341611524032A790070FC30 /* cast.json in Resources */,
+				9341611224032A790070FC30 /* houses.json in Resources */,
+				9341611124032A790070FC30 /* season_5.json in Resources */,
 				93B0878323F93B420089B585 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

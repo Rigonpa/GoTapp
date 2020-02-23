@@ -13,26 +13,36 @@ class CastViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     @IBOutlet weak var tableView: UITableView!
     
+//    let cast: [Cast] = [Cast.init(id: 1, avatar: "Emilia Clarke", fullname: "Emilia Clarke", role: "Daenerys Targaryen", episodes: 73, birth: "1986-10-23", birthPlace: "Londos, England UK"), Cast.init(id: 2, avatar: "Kit Harington", fullname: "Kit Harington", role: "Jon Snow", episodes: 73, birth: "1986-12-26", birthPlace: "Worcester, Worcestershire, England UK")]
+
+    var cast: [Cast] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupUI()
         self.setupNotifications()
+        self.setupData()
     }
 
-    func setupUI(){
-        
-        self.title = "Cast"
-        let nib = UINib.init(nibName: "CastTableViewCell", bundle: nil)
-        tableView.register(nib, forCellReuseIdentifier: "CastTableViewCell")
-        
-        tableView.delegate = self
-        tableView.dataSource = self
-        
-    }
-    
     deinit {
         let noteName = Notification.Name.init(rawValue: "DidFavoriteUpdated")
         NotificationCenter.default.removeObserver(self, name: noteName, object: nil)
+    }
+    
+    func setupData() {
+        
+        if let pathURL = Bundle.main.url(forResource: "cast", withExtension: "json") {
+            do {
+                let data = try Data.init(contentsOf: pathURL)
+                let decoder = JSONDecoder()
+                cast = try decoder.decode([Cast].self, from: data)
+                self.tableView.reloadData()
+            } catch {
+                fatalError(error.localizedDescription)
+            }
+        } else {
+            fatalError("Could not build path url")
+        }
     }
     
     func setupNotifications() {
@@ -40,8 +50,18 @@ class CastViewController: UIViewController, UITableViewDelegate, UITableViewData
         NotificationCenter.default.addObserver(self, selector: #selector(self.didFavoriteChanged), name: noteName, object: nil)
     }
     
-    let cast: [Cast] = [Cast.init(id: 1, avatar: "Emilia Clarke", fullname: "Emilia Clarke", role: "Daenerys Targaryen", episodes: 73, birth: "1986-10-23", birthPlace: "Londos, England UK"), Cast.init(id: 2, avatar: "Kit Harington", fullname: "Kit Harington", role: "Jon Snow", episodes: 73, birth: "1986-12-26", birthPlace: "Worcester, Worcestershire, England UK")]
-
+    func setupUI(){
+           
+           self.title = "Cast"
+           let nib = UINib.init(nibName: "CastTableViewCell", bundle: nil)
+           tableView.register(nib, forCellReuseIdentifier: "CastTableViewCell")
+           
+           tableView.delegate = self
+           tableView.dataSource = self
+           
+       }
+    
+    
     
     // MARK: - CastTableViewCellDelegate
     
