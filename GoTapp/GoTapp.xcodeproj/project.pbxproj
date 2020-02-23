@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		932DAE5A23FED1CD00A29053 /* Rating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932DAE5923FED1CD00A29053 /* Rating.swift */; };
 		93634F5F23FD49220032A66F /* House.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93634F5E23FD49220032A66F /* House.swift */; };
 		9386492B23FCB18300F24072 /* CastTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9386492A23FCB18300F24072 /* CastTableViewCell.swift */; };
 		9386492D23FCB1B800F24072 /* CastTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9386492C23FCB1B800F24072 /* CastTableViewCell.xib */; };
@@ -55,6 +56,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		932DAE5923FED1CD00A29053 /* Rating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rating.swift; sourceTree = "<group>"; };
 		93634F5E23FD49220032A66F /* House.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = House.swift; sourceTree = "<group>"; };
 		9386492A23FCB18300F24072 /* CastTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastTableViewCell.swift; sourceTree = "<group>"; };
 		9386492C23FCB1B800F24072 /* CastTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CastTableViewCell.xib; sourceTree = "<group>"; };
@@ -191,6 +193,7 @@
 				93B087B323F9BAAB0089B585 /* Episode.swift */,
 				9386492E23FCBAE900F24072 /* Cast.swift */,
 				93634F5E23FD49220032A66F /* House.swift */,
+				932DAE5923FED1CD00A29053 /* Rating.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -379,6 +382,7 @@
 				9386492B23FCB18300F24072 /* CastTableViewCell.swift in Sources */,
 				93B0877C23F93B3C0089B585 /* SceneDelegate.swift in Sources */,
 				9386492F23FCBAE900F24072 /* Cast.swift in Sources */,
+				932DAE5A23FED1CD00A29053 /* Rating.swift in Sources */,
 				93B087B923F9CD6B0089B585 /* CastViewController.swift in Sources */,
 				93B4FB0123FD6CA6007DB0C5 /* HouseTableViewCell.swift in Sources */,
 				93B087C223F9D1C90089B585 /* HouseViewController.swift in Sources */,

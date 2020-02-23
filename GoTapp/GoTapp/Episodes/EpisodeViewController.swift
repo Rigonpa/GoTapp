@@ -8,17 +8,18 @@
 
 import UIKit
 
-class EpisodeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    
+class EpisodeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, RateViewControllerDelegate, FavoriteDelegate {
+   
     
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setup()
+        self.setupUI()
+        self.setupNotifications()
     }
     
-    func setup() {
+    func setupUI() {
         
         self.title = "Seasons"
         
@@ -27,10 +28,33 @@ class EpisodeViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         self.tableView.delegate = self // Esto se puede hacer tb desde .xib
         self.tableView.dataSource = self
+        
     }
     
-    var episodes: [Episode] = [Episode.init(id: 1, name: "Winter is Coming", date: "April 17, 2011", image: "episodeTest", episode: 1, season: 1, overview: "Jon Arryn, the Hand of the King, is dead. King Robert…")]
+    deinit {
+        let noteName = Notification.Name.init(rawValue: "DidFavoriteUpdated")
+        NotificationCenter.default.removeObserver(self, name: noteName, object: nil)
+    }
     
+    func setupNotifications() {
+        let noteName = Notification.Name.init(rawValue: "DidFavoriteUpdated")
+        NotificationCenter.default.addObserver(self, selector: #selector(self.didFavoriteChanged), name: noteName, object: nil)
+    }
+    
+    var episodes: [Episode] = [Episode.init(id: 56, name: "Winter is Coming", date: "April 17, 2011", image: "episodeTest", episode: 1, season: 1, overview: "Jon Arryn, the Hand of the King, is dead. King Robert…")]
+    
+    // MARK: - RateViewControllerCellDelegate
+    
+    func didRateChanged() {
+        self.tableView.reloadData()
+    }
+    
+    // MARK: - DelegateViewControllerCellDelegate
+
+    @objc func didFavoriteChanged() {
+        self.tableView.reloadData()
+       }
+       
     
     // MARK: UITableViewDelegate
     
@@ -38,8 +62,17 @@ class EpisodeViewController: UIViewController, UITableViewDelegate, UITableViewD
         return 123
     }
     
+//    func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
+//        return false
+//    }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("Se ha hecho tap en celda con sección \(indexPath.section) y fila \(indexPath.row)")
+        
+//        let rateVC = RateViewController.init(withEpisode: episodes[indexPath.row])
+//        rateVC.present(rateVC, animated: true, completion: nil)
+//        self.modalTransitionStyle = .crossDissolve
+//        self.modalPresentationStyle = .fullScreen
+        
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
@@ -59,6 +92,17 @@ class EpisodeViewController: UIViewController, UITableViewDelegate, UITableViewD
             // El VC ya tiene la celda. Pero está vacía. Ahora toca cargarla antes de pasársela a la tabla. Lo hacemos con una función que creamos .setEpisode
             let ep = episodes[indexPath.row]
             cell.setEpisode(ep)
+            cell.rateBlock = { () -> Void in
+                let rateVC = RateViewController.init(withEpisode: ep)
+                let navigationCont = UINavigationController.init(rootViewController: rateVC)
+                self.navigationController?.present(navigationCont, animated: true, completion: nil)
+                self.modalTransitionStyle = .crossDissolve
+                self.modalPresentationStyle = .fullScreen
+                
+                rateVC.delegate = self
+                
+            }
+            cell.delegate = self
             return cell
         }
         fatalError("Could not create Episode cell")

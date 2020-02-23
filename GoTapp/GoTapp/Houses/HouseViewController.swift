@@ -20,6 +20,8 @@ class HouseViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
 
     func setupUI() {
+        
+        self.title = "Houses"
         let nib = UINib.init(nibName: "HouseTableViewCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "HouseTableViewCell")
         

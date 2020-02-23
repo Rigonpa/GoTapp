@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Episode {
+class Episode: Identifiable {
     var id: Int //Le obligo a que siempre tenga valor
     var name: String?
     var date: String?

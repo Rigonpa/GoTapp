@@ -50,12 +50,15 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nPB-bV-n14">
-                        <rect key="frame" x="310" y="0.0" width="49" height="143"/>
+                        <rect key="frame" x="325" y="0.0" width="49" height="143"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="49" id="eEW-LC-hWp"/>
                         </constraints>
                         <color key="tintColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <state key="normal" image="heart" catalog="system"/>
+                        <connections>
+                            <action selector="favoriteAction:" destination="gjU-q3-SR1" eventType="touchUpInside" id="rbj-hw-fwY"/>
+                        </connections>
                     </button>
                 </subviews>
                 <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
@@ -63,15 +66,15 @@
                     <constraint firstItem="4b9-Tc-LU7" firstAttribute="centerY" secondItem="60v-8c-Nuo" secondAttribute="centerY" constant="-2" id="8yN-wn-0Ar"/>
                     <constraint firstItem="8td-AB-ja7" firstAttribute="leading" secondItem="4b9-Tc-LU7" secondAttribute="trailing" constant="22" id="Akn-Dt-3GY"/>
                     <constraint firstItem="4b9-Tc-LU7" firstAttribute="leading" secondItem="60v-8c-Nuo" secondAttribute="leading" constant="20" id="F8V-FP-BgW"/>
-                    <constraint firstItem="nPB-bV-n14" firstAttribute="leading" secondItem="1zA-U1-f2z" secondAttribute="trailing" constant="-15" id="FBY-KA-KAn"/>
+                    <constraint firstItem="nPB-bV-n14" firstAttribute="leading" secondItem="1zA-U1-f2z" secondAttribute="trailing" id="FBY-KA-KAn"/>
                     <constraint firstAttribute="bottom" secondItem="nPB-bV-n14" secondAttribute="bottom" constant="5" id="FcH-U8-zvw"/>
                     <constraint firstItem="nPB-bV-n14" firstAttribute="top" secondItem="60v-8c-Nuo" secondAttribute="top" id="Gmu-66-0o7"/>
-                    <constraint firstItem="nPB-bV-n14" firstAttribute="leading" secondItem="qhD-Yh-Uzn" secondAttribute="trailing" constant="-15" id="HpE-V1-fxH"/>
+                    <constraint firstItem="nPB-bV-n14" firstAttribute="leading" secondItem="qhD-Yh-Uzn" secondAttribute="trailing" id="HpE-V1-fxH"/>
                     <constraint firstItem="1zA-U1-f2z" firstAttribute="leading" secondItem="4b9-Tc-LU7" secondAttribute="trailing" constant="22" id="MDT-Mf-WG6"/>
                     <constraint firstItem="1zA-U1-f2z" firstAttribute="top" secondItem="8td-AB-ja7" secondAttribute="bottom" constant="8" id="Tg3-ug-B5j"/>
-                    <constraint firstAttribute="trailing" secondItem="nPB-bV-n14" secondAttribute="trailing" constant="15" id="UDN-dH-ueB"/>
+                    <constraint firstAttribute="trailing" secondItem="nPB-bV-n14" secondAttribute="trailing" id="UDN-dH-ueB"/>
                     <constraint firstItem="qhD-Yh-Uzn" firstAttribute="leading" secondItem="4b9-Tc-LU7" secondAttribute="trailing" constant="22" id="dvW-aN-SUB"/>
-                    <constraint firstItem="nPB-bV-n14" firstAttribute="leading" secondItem="8td-AB-ja7" secondAttribute="trailing" constant="-15" id="fYm-Dx-p6p"/>
+                    <constraint firstItem="nPB-bV-n14" firstAttribute="leading" secondItem="8td-AB-ja7" secondAttribute="trailing" id="fYm-Dx-p6p"/>
                     <constraint firstItem="8td-AB-ja7" firstAttribute="top" secondItem="60v-8c-Nuo" secondAttribute="top" constant="25" id="oS3-Fu-GCC"/>
                     <constraint firstAttribute="bottomMargin" secondItem="qhD-Yh-Uzn" secondAttribute="bottom" constant="19" id="q98-M9-7Hm"/>
                 </constraints>

@@ -8,26 +8,47 @@
 
 import UIKit
 
-class CastViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class CastViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, FavoriteDelegate {
+
     
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         self.setupUI()
+        self.setupNotifications()
     }
 
     func setupUI(){
+        
+        self.title = "Cast"
         let nib = UINib.init(nibName: "CastTableViewCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "CastTableViewCell")
         
         tableView.delegate = self
         tableView.dataSource = self
+        
+    }
+    
+    deinit {
+        let noteName = Notification.Name.init(rawValue: "DidFavoriteUpdated")
+        NotificationCenter.default.removeObserver(self, name: noteName, object: nil)
+    }
+    
+    func setupNotifications() {
+        let noteName = Notification.Name.init("DidFavoriteUpdated")
+        NotificationCenter.default.addObserver(self, selector: #selector(self.didFavoriteChanged), name: noteName, object: nil)
     }
     
     let cast: [Cast] = [Cast.init(id: 1, avatar: "Emilia Clarke", fullname: "Emilia Clarke", role: "Daenerys Targaryen", episodes: 73, birth: "1986-10-23", birthPlace: "Londos, England UK"), Cast.init(id: 2, avatar: "Kit Harington", fullname: "Kit Harington", role: "Jon Snow", episodes: 73, birth: "1986-12-26", birthPlace: "Worcester, Worcestershire, England UK")]
 
+    
+    // MARK: - CastTableViewCellDelegate
+    
+    @objc func didFavoriteChanged() {
+        self.tableView.reloadData()
+    }
+    
     // MARK: - UITableViewDelegate
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -54,6 +75,7 @@ class CastViewController: UIViewController, UITableViewDelegate, UITableViewData
             
             let actor = cast[indexPath.row]
             cell.setCast(actor)
+            cell.delegate = self
             return cell
             
         }
