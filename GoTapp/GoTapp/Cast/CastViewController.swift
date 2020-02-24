@@ -76,7 +76,9 @@ class CastViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("La celda ha sido pulsada en la sección \(indexPath.section) fila \(indexPath.row)")
+        let castDetailVC = CastDetailViewController.init(cast[indexPath.row])
+        self.navigationController?.pushViewController(castDetailVC, animated: true)
+        
         tableView.deselectRow(at: indexPath, animated: true)
     }
     

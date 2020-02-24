@@ -16,5 +16,5 @@ struct Cast: Identifiable, Codable {
     var role: String?
     var episodes: Int?
     var birth: String?
-    var birthPlace: String?
+    var placeBirth: String?
 }

@@ -73,7 +73,7 @@ class EpisodeDetailViewController: UIViewController, UITableViewDelegate, UITabl
         }
         
         
-        fatalError("Could not build the episode detail cell")
+        fatalError("Could not create episode detail cell")
     }
     
     
