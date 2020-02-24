@@ -30,6 +30,9 @@ class EpisodeDetailViewController: UIViewController, UITableViewDelegate, UITabl
         let nib = UINib.init(nibName: "EpisodeImageTableViewCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "EpisodeImageTableViewCell")
         
+        let nib2 = UINib.init(nibName: "EpisodeDataTableViewCell", bundle: nil)
+        tableView.register(nib2, forCellReuseIdentifier: "EpisodeDataTableViewCell")
+        
         tableView.delegate = self
         tableView.dataSource = self
     }
@@ -37,7 +40,7 @@ class EpisodeDetailViewController: UIViewController, UITableViewDelegate, UITabl
     // MARK: - UITableViewDelegate
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 254
+        return 300
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -51,14 +54,25 @@ class EpisodeDetailViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return 2
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "EpisodeImageTableViewCell", for: indexPath) as? EpisodeImageTableViewCell {
-            cell.setImageEpisodeDetail(episode!) // Preguntar a Fernando
-           return cell
+        
+        if indexPath.row < 1 {
+            if let cell = tableView.dequeueReusableCell(withIdentifier: "EpisodeImageTableViewCell", for: indexPath) as? EpisodeImageTableViewCell {
+                cell.setImageEpisodeDetail(self.episode!) // Preguntar a Fernando
+                return cell
+            }
+        } else {
+            
+            if let cell = tableView.dequeueReusableCell(withIdentifier: "EpisodeDataTableViewCell", for: indexPath) as? EpisodeDataTableViewCell {
+                cell.setDataEpisodeDetail(self.episode!)
+                return cell
+            }
         }
+        
+        
         fatalError("Could not build the episode detail cell")
     }
     

@@ -14,8 +14,8 @@ class EpisodeImageTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         episodeImage.layer.cornerRadius = 4.0
-        episodeImage.layer.borderWidth = 1.0
-        episodeImage.layer.borderColor = UIColor.white.withAlphaComponent(0.2).cgColor
+        //episodeImage.layer.borderWidth = 1.0
+        //episodeImage.layer.borderColor = UIColor.white.withAlphaComponent(0.2).cgColor
     }
     
     func setImageEpisodeDetail (_ episode: Episode) {

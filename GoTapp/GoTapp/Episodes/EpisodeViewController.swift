@@ -31,7 +31,7 @@ class EpisodeViewController: UIViewController, UITableViewDelegate, UITableViewD
     func setupData(_ seasonNumber: Int) {
         if let pathURL = Bundle.main.url(forResource: "season_\(seasonNumber)", withExtension: "json") {
             do {
-        let data = try Data.init(contentsOf: pathURL) // Este try con exclamación está obligando a que haga la operación si o si.
+        let data = try Data.init(contentsOf: pathURL) // Este try con exclamación está obligando a que haga la operación si o si - Ahora ya no hay exclamación
         let decoder = JSONDecoder()
         episodes = try decoder.decode([Episode].self, from: data)
         self.tableView.reloadData()
