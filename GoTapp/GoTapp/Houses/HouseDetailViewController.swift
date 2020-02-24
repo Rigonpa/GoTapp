@@ -16,6 +16,7 @@ class HouseDetailViewController: UIViewController {
     var house: House?
     
     convenience init(house: House?) {
+
         self.init(nibName: "HouseDetailViewController", bundle: nil)
         self.title = house?.name
         self.house = house

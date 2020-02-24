@@ -57,7 +57,7 @@ class DataController {
             let rateValue = Rating.init(id: episode.id, rate: .rated(value: value))
             rating.append(rateValue)
         } else {
-            //self.updateRate(episode: episode, value: value)
+            self.updateRate(episode: episode, value: value)
         }
         
     }

@@ -88,13 +88,18 @@ class EpisodeViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
 //    func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
-//        return false
+//        return true
 //    }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        let episodeDetailVC = EpisodeDetailViewController.init(episode: episodes[indexPath.row])
+        self.navigationController?.pushViewController(episodeDetailVC, animated: true)
+        
+        
+        
 //        let rateVC = RateViewController.init(withEpisode: episodes[indexPath.row])
-//        rateVC.present(rateVC, animated: true, completion: nil)
+//        self.present(rateVC, animated: true, completion: nil)
 //        self.modalTransitionStyle = .crossDissolve
 //        self.modalPresentationStyle = .fullScreen
         
