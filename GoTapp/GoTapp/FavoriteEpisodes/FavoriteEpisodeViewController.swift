@@ -8,9 +8,16 @@
 
 import UIKit
 
-class FavoriteEpisodeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class FavoriteEpisodeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, FavoriteDelegate {
 
     @IBOutlet weak var tableView: UITableView!
+    
+    var episodes: [Episode] = []
+    
+    convenience init(_ episodes: [Episode]) {
+        self.init(nibName: "FavoriteEpisodeViewController", bundle: nil)
+        self.episodes = episodes
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +33,12 @@ class FavoriteEpisodeViewController: UIViewController, UITableViewDelegate, UITa
         tableView.delegate = self
         tableView.dataSource = self
         
+    }
+    
+    // MARK: - FavoriteDelegate
+    
+    func didFavoriteChanged() {
+        tableView.reloadData()
     }
     
     // MARK: - UITableViewDelegate
@@ -45,20 +58,18 @@ class FavoriteEpisodeViewController: UIViewController, UITableViewDelegate, UITa
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let favEpisodesCount = DataController.shared.favoriteCount()
-        return favEpisodesCount
+
+        return DataController.shared.numberEpisodes()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "EpisodeTableViewCell", for: indexPath) as? EpisodeTableViewCell{
-            
-            let episodeVacio = DataController.shared.takeEpisodeFavorite(indexPath.row)
-            cell.setEpisode(episodeVacio)
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "EpisodeTableViewCell", for: indexPath) as? EpisodeTableViewCell {
+            cell.setEpisode(DataController.shared.favoriteEpisode[indexPath.row])
+            cell.delegate = self
             return cell
-            
-            
         }
-        fatalError("Could not create Episode cell")
+        
+        fatalError("Impossible to create Episode cell")
     }
     
 

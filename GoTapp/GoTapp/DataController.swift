@@ -12,9 +12,9 @@ protocol FavoriteDelegate: class {
     func didFavoriteChanged()
 }
 
-protocol Identifiable {
-    var id: Int { get }
-}
+//protocol Identifiable {
+//    var id: Int { get }
+//}
 
 class DataController {
     
@@ -24,43 +24,60 @@ class DataController {
     
     // Por seguridad ponemos private
     private var rating: [Rating] = []
-    private var favorite: [Int] = []
+    private var favoriteCast: [Int] = []
+    var favoriteEpisode: [Episode] = []
     
     // MARK: - Favorite Episodes
     
-    func favoriteCount() -> Int {
-        return favoriteEpisodes.count
+    func numberEpisodes() -> Int {
+        return favoriteEpisode.count
     }
     
-    func takeEpisodeFavorite(_ indexArray: Int) -> Episode {
-        
-        return favoriteEpisodes[indexArray]
-    }
-    
-    
-    
-    // MARK: - Favorite
-    
-    func isFavorite<T: Identifiable>(_ value: T) -> Bool {
-        return favorite.contains(value.id)
-    }
-    
-    func addFavorite<T: Identifiable> (_ value: T) {
-        if self.isFavorite(value) == false {
-            favorite.append(value.id)
+    func isFavorite(_ episode: Episode) -> Bool {
+        return favoriteEpisode.contains {
+            $0.id == episode.id
         }
     }
     
-    func removeFavorite<T: Identifiable> (_ value: T) {
-        if self.isFavorite(value) {
-            if let index = favorite.firstIndex(of: value.id){
-            favorite.remove(at: index)
+    func addFavorite(_ episode: Episode) {
+        if self.isFavorite(episode) == false {
+            favoriteEpisode.append(episode)
+        }
+    }
+    
+    func removeFavorite(_ episode: Episode) {
+        if self.isFavorite(episode) {
+            if let index = favoriteEpisode.firstIndex(where: {
+                $0.id == episode.id
+            }){
+            favoriteEpisode.remove(at: index)
+            }
+        }
+    }
+    
+    // MARK: - Favorite Cast
+    
+    func isFavorite(_ cast: Cast) -> Bool {
+        return favoriteCast.contains(cast.id)
+    }
+    
+    func addFavorite(_ cast: Cast) {
+        if self.isFavorite(cast) == false {
+            favoriteCast.append(cast.id)
+        }
+    }
+    
+    func removeFavorite(_ cast: Cast) {
+        if self.isFavorite(cast) {
+            if let index = favoriteCast.firstIndex(of: cast.id){
+            favoriteCast.remove(at: index)
             }
         }
     }
     
     func cleanFavorite () {
-        favorite = []
+        favoriteCast = []
+        favoriteEpisode = []
     }
     
     // MARK: - Rating
@@ -112,10 +129,26 @@ class DataController {
           rating[indexOfEpisode!] = Rating.init(id: episode.id, rate: .rated(value: value))
     }
     
+    /* Genéricos
     
+    func isFavorite<T: Identifiable>(_ value: T) -> Bool {
+        return favorite.contains(value.id)
+    }
     
+    func addFavorite<T: Identifiable> (_ value: T) {
+        if self.isFavorite(value) == false {
+            favorite.append(value.id)
+        }
+    }
     
-    
+    func removeFavorite<T: Identifiable> (_ value: T) {
+        if self.isFavorite(value) {
+            if let index = favorite.firstIndex(of: value.id){
+            favorite.remove(at: index)
+            }
+        }
+    }
+    */
     
     
 }
