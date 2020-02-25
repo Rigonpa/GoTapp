@@ -26,6 +26,19 @@ class DataController {
     private var rating: [Rating] = []
     private var favorite: [Int] = []
     
+    // MARK: - Favorite Episodes
+    
+    func favoriteCount() -> Int {
+        return favoriteEpisodes.count
+    }
+    
+    func takeEpisodeFavorite(_ indexArray: Int) -> Episode {
+        
+        return favoriteEpisodes[indexArray]
+    }
+    
+    
+    
     // MARK: - Favorite
     
     func isFavorite<T: Identifiable>(_ value: T) -> Bool {
@@ -91,6 +104,7 @@ class DataController {
         return filtered.first
         //return (filtered.count == 0 ? nil : filtered.first
     }
+    
     
     func updateRate (episode: Episode, value: Double) {
        let indexOfEpisode = rating.firstIndex{$0.id == episode.id}

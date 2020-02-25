@@ -19,21 +19,24 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let episodeViewController = EpisodeViewController()
         let castViewController = CastViewController()
+        let favoriteEpisodeViewController = FavoriteEpisodeViewController()
         let houseViewController = HouseViewController()
         let settingsViewController = SettingsViewController()
         
         let navigationEpisodeViewController = UINavigationController.init(rootViewController: episodeViewController)
         let navigationCastViewController = UINavigationController.init(rootViewController: castViewController)
+        let navigationFavoriteEpisodeViewController = UINavigationController.init(rootViewController: favoriteEpisodeViewController)
         let navigationHouseViewController = UINavigationController.init(rootViewController: houseViewController)
         let navigationSettingsViewController = UINavigationController.init(rootViewController: settingsViewController)
         
         let tabBarController = UITabBarController()
-        tabBarController.viewControllers = [navigationEpisodeViewController, navigationCastViewController, navigationHouseViewController, navigationSettingsViewController]
+        tabBarController.viewControllers = [navigationEpisodeViewController, navigationCastViewController, navigationFavoriteEpisodeViewController, navigationHouseViewController, navigationSettingsViewController]
         
         navigationEpisodeViewController.tabBarItem = UITabBarItem.init(title: "Seasons", image: UIImage.init(systemName: "film.fill"), tag: 0)
         navigationCastViewController.tabBarItem = UITabBarItem.init(title: "Cast", image: UIImage.init(systemName: "person.3.fill"), tag: 1)
-        navigationHouseViewController.tabBarItem = UITabBarItem.init(title: "Houses", image: UIImage.init(systemName: "shield.lefthalf.fill"), tag: 2)
-        navigationSettingsViewController.tabBarItem = UITabBarItem.init(title: "Settings", image: UIImage.init(systemName: "gear"), tag: 3)
+        navigationFavoriteEpisodeViewController.tabBarItem = UITabBarItem.init(title: "Fav", image: UIImage.init(systemName: "heart.fill"), tag: 2)
+        navigationHouseViewController.tabBarItem = UITabBarItem.init(title: "Houses", image: UIImage.init(systemName: "shield.lefthalf.fill"), tag: 3)
+        navigationSettingsViewController.tabBarItem = UITabBarItem.init(title: "Settings", image: UIImage.init(systemName: "gear"), tag: 4)
         
         tabBarController.tabBar.barStyle = .black
         tabBarController.tabBar.isTranslucent = true
