@@ -8,8 +8,8 @@
 
 import Foundation
 
-struct Cast: Identifiable, Codable {
-    
+struct Cast: Identifiable, Codable{
+
     var id: Int
     var avatar: String?
     var fullname: String?
@@ -17,4 +17,17 @@ struct Cast: Identifiable, Codable {
     var episodes: Int?
     var birth: String?
     var placeBirth: String?
+}
+
+extension Cast: Equatable {
+    static func == (lhs: Cast, rhs: Cast) -> Bool {
+        return
+            lhs.id == rhs.id &&
+            lhs.avatar == rhs.avatar &&
+            lhs.fullname == rhs.fullname &&
+            lhs.role == rhs.role &&
+            lhs.episodes == rhs.episodes &&
+            lhs.birth == rhs.birth &&
+            lhs.placeBirth == rhs.placeBirth
+    }
 }

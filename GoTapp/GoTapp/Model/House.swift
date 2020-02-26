@@ -9,10 +9,22 @@
 
 import Foundation
 
-struct House {
+struct House{
+
+    
     var name: String
     var words: String
     var shield: String
     var seat: String
     
+}
+
+extension House: Equatable {
+    static func == (lhs: House, rhs: House) -> Bool {
+        return
+            lhs.name == rhs.name &&
+            lhs.words == rhs.words &&
+            lhs.shield == rhs.shield &&
+            lhs.seat == rhs.seat
+    }
 }

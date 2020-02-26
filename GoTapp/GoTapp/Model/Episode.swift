@@ -8,7 +8,16 @@
 
 import UIKit
 
-class Episode: Identifiable, Codable {
+class Episode: Identifiable, Codable, CustomStringConvertible{
+
+    
+    
+    var description: String {
+        get {
+            return "Episode \(name ?? ""), season \(season) episode \(episode) came out the \(date ?? ""). Here we will see \(overview)"
+        }
+    }
+    
     var id: Int //Le obligo a que siempre tenga valor
     var name: String?
     var date: String?
@@ -26,4 +35,19 @@ class Episode: Identifiable, Codable {
         self.season = season
         self.overview = overview
     }
+    
 }
+
+extension Episode: Equatable {
+    static func == (lhs: Episode, rhs: Episode) -> Bool {
+        return
+            lhs.id == rhs.id &&
+                lhs.name == rhs.name &&
+                lhs.date == rhs.date &&
+                lhs.image == rhs.image &&
+                lhs.episode == rhs.episode &&
+                lhs.season == rhs.season &&
+                lhs.overview == rhs.overview
+    }
+}
+

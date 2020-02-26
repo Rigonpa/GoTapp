@@ -54,8 +54,11 @@ class FavoriteEpisodeViewController: UIViewController, UITableViewDelegate, UITa
     // MARK: - setupUI
     
     func setupUI() {
+        
+        self.title = "Favorite Episodes"
         let nib = UINib.init(nibName: "EpisodeTableViewCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "EpisodeTableViewCell")
+        
         tableView.delegate = self
         tableView.dataSource = self
         
@@ -87,7 +90,7 @@ class FavoriteEpisodeViewController: UIViewController, UITableViewDelegate, UITa
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let episodeDetail = EpisodeDetailViewController.init(episode: DataController.shared.favoriteEpisode[indexPath.row])
+        let episodeDetail = EpisodeDetailViewController.init(episode: DataController.shared.takeFavoriteEpisode(indexPath.row))
         self.navigationController?.pushViewController(episodeDetail, animated: true)
         tableView.deselectRow(at: indexPath, animated: true)
     }
@@ -100,12 +103,12 @@ class FavoriteEpisodeViewController: UIViewController, UITableViewDelegate, UITa
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 
-        return DataController.shared.favoriteEpisode.count
+        return DataController.shared.numberEpisodes()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "EpisodeTableViewCell", for: indexPath) as? EpisodeTableViewCell {
-            let epi = DataController.shared.favoriteEpisode[indexPath.row]
+            let epi = DataController.shared.takeFavoriteEpisode(indexPath.row)
             cell.setEpisode(epi)
             cell.rateBlockFavEpi = {() -> Void in
                 let rateVC = RateViewController.init(withEpisode: epi)

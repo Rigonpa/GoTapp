@@ -29,19 +29,27 @@ class DataController {
     // Por seguridad ponemos private
     private var rating: [Rating] = []
     private var favoriteCast: [Int] = []
-    var favoriteEpisode: [Episode] = []
+    private var favoriteEpisode: [Episode] = []
     
     // MARK: - Favorite Episodes
+    
+    func takeFavoriteEpisode(_ index: Int) -> Episode {
+        return favoriteEpisode[index]
+    }
     
     func numberEpisodes() -> Int {
         return favoriteEpisode.count
     }
     
-    func isFavoriteEpi(_ episode: Episode) -> Bool {
-        return favoriteEpisode.contains {
-            $0.id == episode.id
-        }
+    func isFavoriteEpi(_ episode: Episode) -> Bool { // Wonderful Equatable protocol
+        return favoriteEpisode.contains(episode)
     }
+    
+//    func isFavoriteEpi(_ episode: Episode) -> Bool { Without Equatable
+//        return favoriteEpisode.contains {
+//            $0.id == episode.id
+//        }
+//    }
     
     func addFavoriteEpi(_ episode: Episode) {
         if self.isFavoriteEpi(episode) == false {
@@ -49,15 +57,23 @@ class DataController {
         }
     }
     
-    func removeFavoriteEpi(_ episode: Episode) {
+    func removeFavoriteEpi(_ episode: Episode) { // Wonderful Equatable protocol
         if self.isFavoriteEpi(episode) {
-            if let index = favoriteEpisode.firstIndex(where: {
-                $0.id == episode.id
-            }){
+            if let index = favoriteEpisode.firstIndex(of: episode){
             favoriteEpisode.remove(at: index)
             }
         }
     }
+    
+//    func removeFavoriteEpi(_ episode: Episode) { Without Equatable
+//        if self.isFavoriteEpi(episode) {
+//            if let index = favoriteEpisode.firstIndex(where: {
+//                $0.id == episode.id
+//            }){
+//            favoriteEpisode.remove(at: index)
+//            }
+//        }
+//    }
     
     // MARK: - Favorite Cast
     
@@ -86,12 +102,12 @@ class DataController {
     
     // MARK: - Rating
     
-    func rateEpisode (_ episode: Episode, value: Double) {
+    func rateEpisode (_ episode: Episode, value2: Double) {
         if self.ratingForEpisode(episode) == nil {
-            let rateValue = Rating.init(id: episode.id, rate: .rated(value: value))
+            let rateValue = Rating.init(id: episode.id, rate: .rated(value: value2))
             rating.append(rateValue)
         } else {
-            self.updateRate(episode: episode, value: value)
+            //self.updateRate(episode: episode, value: value)
         }
         
     }
@@ -125,6 +141,14 @@ class DataController {
         return filtered.first
         //return (filtered.count == 0 ? nil : filtered.first
     }
+    
+//    func ratingForEpisode (_ episode: Episode) -> Rating? {
+//        let filtered = rating.filter {
+//            $0.id == episode.id //$0 es rating
+//        }
+//        return filtered.first
+//        //return (filtered.count == 0 ? nil : filtered.first
+//    }
     
     
     func updateRate (episode: Episode, value: Double) {

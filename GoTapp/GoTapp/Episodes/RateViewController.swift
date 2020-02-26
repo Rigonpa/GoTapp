@@ -22,7 +22,7 @@ import UIKit // Fundation y además todas las herramientas de diseño mobile
 
 class RateViewController: UIViewController {
     
-    @IBOutlet weak var rateLabel: UILabel!
+    //@IBOutlet weak var rateLabel: UILabel!
     @IBOutlet weak var confirmButton: UIButton!
     @IBOutlet weak var episodeImage: UIImageView!
     
@@ -113,7 +113,7 @@ class RateViewController: UIViewController {
     
     func setRating (_ rating: Double) {
         
-        rateLabel.text = String(Int(rating * 5 / 10))
+        //rateLabel.text = String(Int(rating * 5 / 10))
         
         
         self.setImageStar(star01, rating: rating, position: 0)

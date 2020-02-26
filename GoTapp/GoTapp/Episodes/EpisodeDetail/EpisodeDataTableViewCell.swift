@@ -25,7 +25,8 @@ class EpisodeDataTableViewCell: UITableViewCell {
         seasonEpisode.text = "S\(String(s))E\(String(e))"
         nameEpisode.text = episode.name
         dateShown.text = episode.date
+        //overview.text = episode.description
         overview.text = episode.overview
-        
+
     }
 }
