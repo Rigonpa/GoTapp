@@ -26,8 +26,8 @@ class EpisodeTableViewCell: UITableViewCell {
     var rateBlockFavEpi: (() -> Void)?
     
     private var episode: Episode?
-    var delegate: FavoriteDelegate? // Para según pulso en un heart se marque o desmarque. Para episodios y cast
-    var favEpiDelegate: FavoriteEpisodeDelegate? // Para según pulso en un heart se marque o desmarque. Para episodios favoritos
+    //var delegate: FavoriteDelegate? // Para según pulso en un heart se marque o desmarque. Para episodios y cast
+    //var favEpiDelegate: FavoriteEpisodeDelegate? // Para según pulso en un heart se marque o desmarque. Para episodios favoritos
     
     
     override func awakeFromNib() {
@@ -76,9 +76,11 @@ class EpisodeTableViewCell: UITableViewCell {
             } else {
                 DataController.shared.addFavoriteEpi(episode)
             }
-            self.delegate?.didFavoriteChanged()
-            self.favEpiDelegate?.didFavEpiChanged()
         }
+        
+        let notaName = Notification.Name.init("UpdateFavoriteEpisodes")
+        NotificationCenter.default.post(name: notaName, object: nil)
+        
     }
     
     

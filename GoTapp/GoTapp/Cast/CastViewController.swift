@@ -25,7 +25,7 @@ class CastViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
 
     deinit {
-        let noteName = Notification.Name.init(rawValue: "DidFavoriteUpdated")
+        let noteName = Notification.Name.init(rawValue: "CleanFavorites")
         NotificationCenter.default.removeObserver(self, name: noteName, object: nil)
     }
     
@@ -46,8 +46,8 @@ class CastViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func setupNotifications() {
-        let noteName = Notification.Name.init("DidFavoriteUpdated")
-        NotificationCenter.default.addObserver(self, selector: #selector(self.didFavoriteCastChanged), name: noteName, object: nil)
+        let noteName = Notification.Name.init("CleanFavorites")
+        NotificationCenter.default.addObserver(self, selector: #selector(self.cleanFavorites), name: noteName, object: nil)
     }
     
     func setupUI(){
@@ -65,7 +65,13 @@ class CastViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     // MARK: - FavoriteCastDelegate
     
-    @objc func didFavoriteCastChanged() {
+    func didFavoriteCastChanged() {
+        self.tableView.reloadData()
+    }
+    
+    // MARK: - Notification Center - Clean Favorites
+    
+    @objc func cleanFavorites() {
         self.tableView.reloadData()
     }
     

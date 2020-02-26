@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EpisodeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, FavoriteCastDelegate{
+class EpisodeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
         
     @IBOutlet weak var tableView: UITableView!
     
@@ -22,10 +22,20 @@ class EpisodeViewController: UIViewController, UITableViewDelegate, UITableViewD
         self.setupData(1)
     }
     
+    // MARK: - DEINIT Notification Center
+    
     deinit {
-           let noteName = Notification.Name.init(rawValue: "DidFavoriteUpdated")
-           NotificationCenter.default.removeObserver(self, name: noteName, object: nil)
-       }
+        
+        let notaName = Notification.Name.init("UpdateFavoriteEpisodes")
+        NotificationCenter.default.removeObserver(self, name: notaName, object: nil)
+        
+        let notiName = Notification.Name.init("DidRateChanged")
+        NotificationCenter.default.removeObserver(self, name: notiName, object: nil)
+        
+        let noteName = Notification.Name.init(rawValue: "CleanFavorites")
+        NotificationCenter.default.removeObserver(self, name: noteName, object: nil)
+        
+    }
     
     func setupData(_ seasonNumber: Int) {
         if let pathURL = Bundle.main.url(forResource: "season_\(seasonNumber)", withExtension: "json") {
@@ -56,13 +66,17 @@ class EpisodeViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func setupNotifications() {
         
+        //Update FavoriteEpisodes
+        let notaName = Notification.Name.init("UpdateFavoriteEpisodes")
+        NotificationCenter.default.addObserver(self, selector: #selector(self.updateFavoriteEpisodes), name: notaName, object: nil)
+        
         //Update rating
         let notiName = Notification.Name(rawValue: "DidRateChanged")
         NotificationCenter.default.addObserver(self, selector: #selector(self.didEpiRateChanged), name: notiName, object: nil)
         
         // Clean Favorites
-        let noteName = Notification.Name.init(rawValue: "DidFavoriteUpdated")
-        NotificationCenter.default.addObserver(self, selector: #selector(self.didFavoritesChanged), name: noteName, object: nil)
+        let noteName = Notification.Name.init(rawValue: "CleanFavorites")
+        NotificationCenter.default.addObserver(self, selector: #selector(self.cleanFavorites), name: noteName, object: nil)
     }
     
     // MARK: - IBActions
@@ -72,30 +86,23 @@ class EpisodeViewController: UIViewController, UITableViewDelegate, UITableViewD
         self.setupData(seasonNumber)
     }
     
+    // MARK: - Notification Center - Update Favorite Episodes
+    
+    @objc func updateFavoriteEpisodes(){
+        self.tableView.reloadData()
+    }
+    
     // MARK: - Notification Center - Update Rating
     
     @objc func didEpiRateChanged() {
         self.tableView.reloadData()
     }
 
-    // MARK: - RateViewControllerCellDelegate
-    
-    func didRateChanged() {
-        self.tableView.reloadData()
-    }
-    
     // MARK: - Notification Center - Clean Favorites
     
-    @objc func didFavoritesChanged() {
+    @objc func cleanFavorites() {
         self.tableView.reloadData()
     }
-    
-    // MARK: - FavoriteDelegate
-
-    func didFavoriteChanged() {
-        self.tableView.reloadData()
-       }
-       
     
     // MARK: UITableViewDelegate
     
@@ -148,7 +155,6 @@ class EpisodeViewController: UIViewController, UITableViewDelegate, UITableViewD
                 //rateVC.delegate = self
                 
             }
-            cell.delegate = self
             return cell
         }
         fatalError("Could not create Episode cell")

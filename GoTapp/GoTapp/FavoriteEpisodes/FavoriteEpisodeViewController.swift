@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FavoriteEpisodeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, FavoriteEpisodeDelegate, TestRateViewControllerDelegate{
+class FavoriteEpisodeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
 
     @IBOutlet weak var tableView: UITableView!
 
@@ -19,11 +19,36 @@ class FavoriteEpisodeViewController: UIViewController, UITableViewDelegate, UITa
 
     }
     
+    // MARK: DEINIT - Notification Center
+    
+    deinit {
+        
+        let notaName = Notification.Name.init("UpdateFavoriteEpisodes")
+        NotificationCenter.default.removeObserver(self, name: notaName, object: nil)
+        
+        let notiName = Notification.Name.init("DidRateChanged")
+        NotificationCenter.default.removeObserver(self, name: notiName, object: nil)
+        
+        let noteName = Notification.Name.init("CleanFavorites")
+        NotificationCenter.default.removeObserver(self, name: noteName, object: nil)
+        
+    }
+    
     // MARK: - setupNotifications
     
     func setupNotifications() {
-        let noti = Notification.Name.init("DidRateChanged")
-        NotificationCenter.default.addObserver(self, selector: #selector(self.didEpiRateChanged), name: noti, object: nil)
+        
+        //Update Favorite Episodes
+        let notaName = Notification.Name.init("UpdateFavoriteEpisodes")
+        NotificationCenter.default.addObserver(self, selector: #selector(self.updateFavoriteEpisodes), name: notaName, object: nil)
+        
+        // Update Rating
+        let notiName = Notification.Name.init("DidRateChanged")
+        NotificationCenter.default.addObserver(self, selector: #selector(self.didEpiRateChanged), name: notiName, object: nil)
+        
+        // Clean Favorites
+        let noteName = Notification.Name.init("CleanFavorites")
+        NotificationCenter.default.addObserver(self, selector: #selector(self.cleanFavorites), name: noteName, object: nil)
     }
     
     // MARK: - setupUI
@@ -36,24 +61,24 @@ class FavoriteEpisodeViewController: UIViewController, UITableViewDelegate, UITa
         
     }
     
+    // MARK: - Notification Center - Update Favorite Episodes
+    
+    @objc func updateFavoriteEpisodes(){
+        self.tableView.reloadData()
+    }
+    
     // MARK: - Notification Center - Update Rating
     
     @objc func didEpiRateChanged() {
         self.tableView.reloadData()
     }
     
-    // MARK: - FavoriteEpisodeDelegate
+    // MARK: - Notification Center - Clean Favorites
     
-    func didFavEpiChanged() {
+    @objc func cleanFavorites() {
         self.tableView.reloadData()
     }
-    
-    // MARK: - TestRateViewControllerDelegate
-    
-    func testDidRateChanged() {
-        self.tableView.reloadData()
-    }
-        
+
     // MARK: - UITableViewDelegate
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -89,9 +114,8 @@ class FavoriteEpisodeViewController: UIViewController, UITableViewDelegate, UITa
                 self.modalTransitionStyle = .crossDissolve
                 self.modalPresentationStyle = .fullScreen
                 
-                rateVC.testDelegate = self
+
             }
-            cell.favEpiDelegate = self
             return cell
         }
         

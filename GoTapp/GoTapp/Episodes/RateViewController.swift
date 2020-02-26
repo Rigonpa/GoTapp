@@ -5,17 +5,18 @@
 //  Created by Ricardo González Pacheco on 16/02/2020.
 //  Copyright © 2020 Ricardo González Pacheco. All rights reserved.
 //
+
 //protocol RateViewControllerDelegate {
 //    func didRateChanged()
 //}
 
-protocol TestRateViewControllerDelegate {
-    func testDidRateChanged()
-}
-
-protocol TestTwoRateVCDelegate {
-    func testTwoDidRateChanged()
-}
+//protocol TestRateViewControllerDelegate {
+//    func testDidRateChanged()
+//}
+//
+//protocol TestTwoRateVCDelegate {
+//    func testTwoDidRateChanged()
+//}
 
 import UIKit // Fundation y además todas las herramientas de diseño mobile
 
@@ -33,8 +34,8 @@ class RateViewController: UIViewController {
     @IBOutlet weak var rateSlider: UISlider!
     
     //var delegate: RateViewControllerDelegate?  // Para ver puntuación del rate en la celda dentro del EpisodeTableView
-    var testDelegate: TestRateViewControllerDelegate? // Para actualizar puntuación desde rateViewController (dentro de FavoriteEpisodeTableView) en FavoriteEpisodeTableView
-    var testTwoDelegate: TestTwoRateVCDelegate? //Para actualizar puntuación desde rateViewController (dentro de FavoriteEpisodeTableView) en EpisodeTableView
+    //var testDelegate: TestRateViewControllerDelegate? // Para actualizar puntuación desde rateViewController (dentro de FavoriteEpisodeTableView) en FavoriteEpisodeTableView
+    //var testTwoDelegate: TestTwoRateVCDelegate? //Para actualizar puntuación desde rateViewController (dentro de FavoriteEpisodeTableView) en EpisodeTableView
 
     
     private var episode: Episode?
@@ -66,9 +67,6 @@ class RateViewController: UIViewController {
         if let episode = self.episode {
             DataController.shared.rateEpisode(episode, value: rate)
             self.navigationController?.dismiss(animated: true, completion: nil)
-            //self.delegate?.didRateChanged()
-            self.testDelegate?.testDidRateChanged()
-            self.testTwoDelegate?.testTwoDidRateChanged()
         }
         
         let notiName = Notification.Name.init("DidRateChanged")

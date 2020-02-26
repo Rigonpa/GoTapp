@@ -7,10 +7,10 @@
 //
 
 import Foundation
-
-protocol FavoriteEpisodeDelegate: class {
-    func didFavEpiChanged()
-}
+//
+//protocol FavoriteEpisodeDelegate: class {
+//    func didFavEpiChanged()
+//}
 
 protocol FavoriteCastDelegate: class {
     func didFavoriteCastChanged()
