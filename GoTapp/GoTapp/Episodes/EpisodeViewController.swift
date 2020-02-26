@@ -146,14 +146,12 @@ class EpisodeViewController: UIViewController, UITableViewDelegate, UITableViewD
             let ep = episodes[indexPath.row]
             cell.setEpisode(ep)
             cell.rateBlock = { () -> Void in
+                
                 let rateVC = RateViewController.init(withEpisode: ep)
-                let navigationCont = UINavigationController.init(rootViewController: rateVC)
-                self.navigationController?.present(navigationCont, animated: true, completion: nil)
-                self.modalTransitionStyle = .crossDissolve
-                self.modalPresentationStyle = .fullScreen
-                
-                //rateVC.delegate = self
-                
+                rateVC.modalPresentationStyle = .fullScreen
+                let navi = UINavigationController.init(rootViewController: rateVC)
+                self.present(navi, animated: true, completion: nil)
+
             }
             return cell
         }

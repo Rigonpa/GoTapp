@@ -24,7 +24,8 @@ class RateViewController: UIViewController {
     
     @IBOutlet weak var rateLabel: UILabel!
     @IBOutlet weak var confirmButton: UIButton!
-    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var episodeImage: UIImageView!
+    
     
     @IBOutlet weak var star01: UIImageView!
     @IBOutlet weak var star02: UIImageView!
@@ -37,6 +38,13 @@ class RateViewController: UIViewController {
     //var testDelegate: TestRateViewControllerDelegate? // Para actualizar puntuación desde rateViewController (dentro de FavoriteEpisodeTableView) en FavoriteEpisodeTableView
     //var testTwoDelegate: TestTwoRateVCDelegate? //Para actualizar puntuación desde rateViewController (dentro de FavoriteEpisodeTableView) en EpisodeTableView
 
+    //El awakeFromNib sólo lo uso en las celdas.swift
+//    override func awakeFromNib() {
+//        episodeImage.layer.cornerRadius = 4.0
+//        episodeImage.layer.borderWidth = 1.0
+//        episodeImage.layer.borderColor = UIColor.white.withAlphaComponent(0.2).cgColor
+//
+//    }
     
     private var episode: Episode?
     
@@ -49,7 +57,14 @@ class RateViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         confirmButton.layer.cornerRadius = 4.0
+        episodeImage.layer.cornerRadius = 4.0
+        episodeImage.layer.borderWidth = 1.0
+        episodeImage.layer.borderColor = UIColor.white.withAlphaComponent(0.2).cgColor
         //self.rateLabel.textColor = UIColor.red
+        
+        self.navigationItem.title = episode?.name
+        
+        episodeImage.image = UIImage.init(named: episode?.image ?? "")
     }
     
     
