@@ -8,9 +8,8 @@
 
 import UIKit
 
-class EpisodeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, RateViewControllerDelegate, FavoriteDelegate {
-   
-    
+class EpisodeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, FavoriteCastDelegate{
+        
     @IBOutlet weak var tableView: UITableView!
     
 //    var episodes: [Episode] = [Episode.init(id: 56, name: "Winter is Coming", date: "April 17, 2011", image: "episodeTest", episode: 1, season: 1, overview: "Jon Arryn, the Hand of the King, is dead. King Robert…")]
@@ -56,8 +55,14 @@ class EpisodeViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func setupNotifications() {
+        
+        //Update rating
+        let notiName = Notification.Name(rawValue: "DidRateChanged")
+        NotificationCenter.default.addObserver(self, selector: #selector(self.didEpiRateChanged), name: notiName, object: nil)
+        
+        // Clean Favorites
         let noteName = Notification.Name.init(rawValue: "DidFavoriteUpdated")
-        NotificationCenter.default.addObserver(self, selector: #selector(self.didFavoriteChanged), name: noteName, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.didFavoritesChanged), name: noteName, object: nil)
     }
     
     // MARK: - IBActions
@@ -67,16 +72,27 @@ class EpisodeViewController: UIViewController, UITableViewDelegate, UITableViewD
         self.setupData(seasonNumber)
     }
     
+    // MARK: - Notification Center - Update Rating
     
+    @objc func didEpiRateChanged() {
+        self.tableView.reloadData()
+    }
+
     // MARK: - RateViewControllerCellDelegate
     
     func didRateChanged() {
         self.tableView.reloadData()
     }
     
-    // MARK: - EpisodeViewControllerCellDelegate
+    // MARK: - Notification Center - Clean Favorites
+    
+    @objc func didFavoritesChanged() {
+        self.tableView.reloadData()
+    }
+    
+    // MARK: - FavoriteDelegate
 
-    @objc func didFavoriteChanged() {
+    func didFavoriteChanged() {
         self.tableView.reloadData()
        }
        
@@ -129,7 +145,7 @@ class EpisodeViewController: UIViewController, UITableViewDelegate, UITableViewD
                 self.modalTransitionStyle = .crossDissolve
                 self.modalPresentationStyle = .fullScreen
                 
-                rateVC.delegate = self
+                //rateVC.delegate = self
                 
             }
             cell.delegate = self

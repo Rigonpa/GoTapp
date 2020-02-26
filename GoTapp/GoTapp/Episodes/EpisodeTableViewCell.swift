@@ -23,9 +23,12 @@ class EpisodeTableViewCell: UITableViewCell {
     @IBOutlet weak var heart: UIButton!
     
     var rateBlock: (() -> Void)?
+    var rateBlockFavEpi: (() -> Void)?
     
     private var episode: Episode?
-    var delegate: FavoriteDelegate?
+    var delegate: FavoriteDelegate? // Para según pulso en un heart se marque o desmarque. Para episodios y cast
+    var favEpiDelegate: FavoriteEpisodeDelegate? // Para según pulso en un heart se marque o desmarque. Para episodios favoritos
+    
     
     override func awakeFromNib() {
         thumb.layer.cornerRadius = 2.0
@@ -38,7 +41,7 @@ class EpisodeTableViewCell: UITableViewCell {
         
         self.episode = episode
         
-        let imageViewName = DataController.shared.isFavorite(episode) ? "heart.fill" : "heart"
+        let imageViewName = DataController.shared.isFavoriteEpi(episode) ? "heart.fill" : "heart"
         let imageView = UIImage.init(systemName: imageViewName)
         self.heart.setImage(imageView, for: .normal)
         
@@ -61,18 +64,20 @@ class EpisodeTableViewCell: UITableViewCell {
     
     @IBAction func fireRate(_ sender: Any) {
         self.rateBlock?()
+        self.rateBlockFavEpi?()
     }
     
     // MARK: - Favorite
     
     @IBAction func favoriteAction(_ sender: Any) {
         if let episode = self.episode {
-            if DataController.shared.isFavorite(episode) {
-                DataController.shared.removeFavorite(episode)
+            if DataController.shared.isFavoriteEpi(episode) {
+                DataController.shared.removeFavoriteEpi(episode)
             } else {
-                DataController.shared.addFavorite(episode)
+                DataController.shared.addFavoriteEpi(episode)
             }
             self.delegate?.didFavoriteChanged()
+            self.favEpiDelegate?.didFavEpiChanged()
         }
     }
     

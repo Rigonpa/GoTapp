@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CastViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, FavoriteDelegate {
+class CastViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, FavoriteCastDelegate {
 
     
     @IBOutlet weak var tableView: UITableView!
@@ -47,7 +47,7 @@ class CastViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func setupNotifications() {
         let noteName = Notification.Name.init("DidFavoriteUpdated")
-        NotificationCenter.default.addObserver(self, selector: #selector(self.didFavoriteChanged), name: noteName, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.didFavoriteCastChanged), name: noteName, object: nil)
     }
     
     func setupUI(){
@@ -63,9 +63,9 @@ class CastViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     
     
-    // MARK: - CastTableViewCellDelegate
+    // MARK: - FavoriteCastDelegate
     
-    @objc func didFavoriteChanged() {
+    @objc func didFavoriteCastChanged() {
         self.tableView.reloadData()
     }
     
@@ -97,7 +97,7 @@ class CastViewController: UIViewController, UITableViewDelegate, UITableViewData
             
             let actor = cast[indexPath.row]
             cell.setCast(actor)
-            cell.delegate = self
+            cell.castDelegate = self
             return cell
             
         }

@@ -17,7 +17,7 @@ class CastTableViewCell: UITableViewCell {
     @IBOutlet weak var heart: UIButton!
     
     private var cast: Cast?
-    var delegate: FavoriteDelegate?
+    var castDelegate: FavoriteCastDelegate?
     
     override func awakeFromNib() {
         avatar.layer.cornerRadius = 8.0
@@ -28,7 +28,7 @@ class CastTableViewCell: UITableViewCell {
     func setCast(_ cast: Cast) {
         self.cast = cast
         
-        let heartImageNamed = DataController.shared.isFavorite(cast) ? "heart.fill" : "heart"
+        let heartImageNamed = DataController.shared.isFavoriteCast(cast) ? "heart.fill" : "heart"
         let heartImage = UIImage.init(systemName: heartImageNamed)
         self.heart.setImage(heartImage, for: .normal)
         
@@ -43,12 +43,12 @@ class CastTableViewCell: UITableViewCell {
     
     @IBAction func favoriteAction(_ sender: Any) {
         if let cast = self.cast {
-            if DataController.shared.isFavorite(cast) {
-                DataController.shared.removeFavorite(cast)
+            if DataController.shared.isFavoriteCast(cast) {
+                DataController.shared.removeFavoriteCast(cast)
             } else {
-                DataController.shared.addFavorite(cast)
+                DataController.shared.addFavoriteCast(cast)
             }
-            self.delegate?.didFavoriteChanged()
+            self.castDelegate?.didFavoriteCastChanged()
         }
     }
 }

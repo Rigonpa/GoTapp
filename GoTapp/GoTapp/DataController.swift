@@ -8,8 +8,12 @@
 
 import Foundation
 
-protocol FavoriteDelegate: class {
-    func didFavoriteChanged()
+protocol FavoriteEpisodeDelegate: class {
+    func didFavEpiChanged()
+}
+
+protocol FavoriteCastDelegate: class {
+    func didFavoriteCastChanged()
 }
 
 //protocol Identifiable {
@@ -33,20 +37,20 @@ class DataController {
         return favoriteEpisode.count
     }
     
-    func isFavorite(_ episode: Episode) -> Bool {
+    func isFavoriteEpi(_ episode: Episode) -> Bool {
         return favoriteEpisode.contains {
             $0.id == episode.id
         }
     }
     
-    func addFavorite(_ episode: Episode) {
-        if self.isFavorite(episode) == false {
+    func addFavoriteEpi(_ episode: Episode) {
+        if self.isFavoriteEpi(episode) == false {
             favoriteEpisode.append(episode)
         }
     }
     
-    func removeFavorite(_ episode: Episode) {
-        if self.isFavorite(episode) {
+    func removeFavoriteEpi(_ episode: Episode) {
+        if self.isFavoriteEpi(episode) {
             if let index = favoriteEpisode.firstIndex(where: {
                 $0.id == episode.id
             }){
@@ -57,18 +61,18 @@ class DataController {
     
     // MARK: - Favorite Cast
     
-    func isFavorite(_ cast: Cast) -> Bool {
+    func isFavoriteCast(_ cast: Cast) -> Bool {
         return favoriteCast.contains(cast.id)
     }
     
-    func addFavorite(_ cast: Cast) {
-        if self.isFavorite(cast) == false {
+    func addFavoriteCast(_ cast: Cast) {
+        if self.isFavoriteCast(cast) == false {
             favoriteCast.append(cast.id)
         }
     }
     
-    func removeFavorite(_ cast: Cast) {
-        if self.isFavorite(cast) {
+    func removeFavoriteCast(_ cast: Cast) {
+        if self.isFavoriteCast(cast) {
             if let index = favoriteCast.firstIndex(of: cast.id){
             favoriteCast.remove(at: index)
             }
