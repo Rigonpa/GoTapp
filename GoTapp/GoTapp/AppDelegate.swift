@@ -15,18 +15,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // MARK: Mis estados
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch. Que esto sea lo más pequeño posible para que la aplicación arranque lo antes posible
-        
-        //print("Estoy apunto de ser ejecutado")
-        
-        //let strin = "Nombre"
-        //let mayus = strin.uppercased()
-        
         return true
     }
     
     func applicationDidEnterBackground(_ application: UIApplication) {
-        //print("Me acaban de mandar al fondo del móvil")
     }
 
     // MARK: UISceneSession Lifecycle

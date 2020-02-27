@@ -18,6 +18,7 @@ class SettingsViewController: UIViewController {
 
     @IBAction func cleanFavorite(_ sender: Any) {
         DataController.shared.cleanFavorite()
+        
         // Actualizar todas las tablas donde aparezca icono fav
         let noteName = Notification.Name.init(rawValue: "CleanFavorites")
         NotificationCenter.default.post(name: noteName, object: nil)

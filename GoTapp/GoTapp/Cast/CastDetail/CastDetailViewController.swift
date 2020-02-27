@@ -15,7 +15,7 @@ class CastDetailViewController: UIViewController, UITableViewDelegate, UITableVi
     var cast: Cast?
     
     convenience init(_ cast: Cast?) {
-        self.init(nibName:"CastDetailViewController", bundle: nil)
+        self.init(nibName:"CastDetailViewController", bundle: nil) // También podría hacer self.init()
         self.cast = cast
         self.title = cast?.fullname
     }
@@ -26,7 +26,7 @@ class CastDetailViewController: UIViewController, UITableViewDelegate, UITableVi
         
     }
 
-    // MARK: - setupUI
+    // MARK: - setup UI
     
     func setupUI() {
         

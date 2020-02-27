@@ -11,7 +11,8 @@ import UIKit
 class EpisodeDetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
-    var episode: Episode?
+    
+    private var episode: Episode?
     
     override func viewDidLoad() {
         super.viewDidLoad()

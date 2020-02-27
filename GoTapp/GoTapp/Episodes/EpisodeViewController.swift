@@ -12,7 +12,6 @@ class EpisodeViewController: UIViewController, UITableViewDelegate, UITableViewD
         
     @IBOutlet weak var tableView: UITableView!
     
-//    var episodes: [Episode] = [Episode.init(id: 56, name: "Winter is Coming", date: "April 17, 2011", image: "episodeTest", episode: 1, season: 1, overview: "Jon Arryn, the Hand of the King, is dead. King Robert…")]
     var episodes: [Episode] = []
     
     override func viewDidLoad() {
@@ -22,7 +21,7 @@ class EpisodeViewController: UIViewController, UITableViewDelegate, UITableViewD
         self.setupData(1)
     }
     
-    // MARK: - DEINIT Notification Center
+    // MARK: - DEINIT - Notification Center
     
     deinit {
         
@@ -42,7 +41,7 @@ class EpisodeViewController: UIViewController, UITableViewDelegate, UITableViewD
     func setupData(_ seasonNumber: Int) {
         if let pathURL = Bundle.main.url(forResource: "season_\(seasonNumber)", withExtension: "json") {
             do {
-                let data = try Data.init(contentsOf: pathURL) // Este try con exclamación está obligando a que haga la operación si o si - Ahora ya no hay exclamación
+                let data = try Data.init(contentsOf: pathURL)
                 let decoder = JSONDecoder()
                 episodes = try decoder.decode([Episode].self, from: data)
                 self.tableView.reloadData()

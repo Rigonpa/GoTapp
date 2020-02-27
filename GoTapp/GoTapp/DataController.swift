@@ -16,7 +16,7 @@ protocol FavoriteCastDelegate: class {
     func didFavoriteCastChanged()
 }
 
-//protocol Identifiable {
+//protocol Identifiable { // He tenido que deshacer los 3 métodos genéricos
 //    var id: Int { get }
 //}
 
@@ -175,12 +175,12 @@ class DataController {
 //    }
     
     
-    func updateRate (episode: Episode, value: Double) {
-       let indexOfEpisode = rating.firstIndex{$0.id == episode.id}
-          
-          rating[indexOfEpisode!] = Rating.init(id: episode.id, rate: .rated(value: value))
-    }
-    
+//    func updateRate (episode: Episode, value: Double) { // Función mía que al final no he implementado en GoTapp
+//       let indexOfEpisode = rating.firstIndex{$0.id == episode.id}
+//
+//          rating[indexOfEpisode!] = Rating.init(id: episode.id, rate: .rated(value: value))
+//    }
+//
     /* Genéricos
     
     func isFavorite<T: Identifiable>(_ value: T) -> Bool {

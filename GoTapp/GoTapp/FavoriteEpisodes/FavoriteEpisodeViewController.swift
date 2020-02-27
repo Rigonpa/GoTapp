@@ -34,7 +34,7 @@ class FavoriteEpisodeViewController: UIViewController, UITableViewDelegate, UITa
         
     }
     
-    // MARK: - setupNotifications
+    // MARK: - setup Notifications
     
     func setupNotifications() {
         
@@ -51,7 +51,7 @@ class FavoriteEpisodeViewController: UIViewController, UITableViewDelegate, UITa
         NotificationCenter.default.addObserver(self, selector: #selector(self.cleanFavorites), name: noteName, object: nil)
     }
     
-    // MARK: - setupUI
+    // MARK: - setup UI
     
     func setupUI() {
         

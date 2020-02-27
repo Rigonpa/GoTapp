@@ -12,8 +12,6 @@ class CastViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     
     @IBOutlet weak var tableView: UITableView!
-    
-//    let cast: [Cast] = [Cast.init(id: 1, avatar: "Emilia Clarke", fullname: "Emilia Clarke", role: "Daenerys Targaryen", episodes: 73, birth: "1986-10-23", birthPlace: "Londos, England UK"), Cast.init(id: 2, avatar: "Kit Harington", fullname: "Kit Harington", role: "Jon Snow", episodes: 73, birth: "1986-12-26", birthPlace: "Worcester, Worcestershire, England UK")]
 
     var cast: [Cast] = []
     
@@ -23,11 +21,15 @@ class CastViewController: UIViewController, UITableViewDelegate, UITableViewData
         self.setupNotifications()
         self.setupData()
     }
+    
+    // MARK: - DEINIT - Notification Center
 
     deinit {
         let noteName = Notification.Name.init(rawValue: "CleanFavorites")
         NotificationCenter.default.removeObserver(self, name: noteName, object: nil)
     }
+    
+    // MARK: - Setup Data
     
     func setupData() {
         
@@ -45,10 +47,14 @@ class CastViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
     }
     
+    // MARK: - Setup Notifications
+    
     func setupNotifications() {
         let noteName = Notification.Name.init("CleanFavorites")
         NotificationCenter.default.addObserver(self, selector: #selector(self.cleanFavorites), name: noteName, object: nil)
     }
+    
+    // MARK: Setup UI
     
     func setupUI(){
            
@@ -60,8 +66,6 @@ class CastViewController: UIViewController, UITableViewDelegate, UITableViewData
            tableView.dataSource = self
            
        }
-    
-    
     
     // MARK: - FavoriteCastDelegate
     
