@@ -14,7 +14,11 @@ class HouseTableViewCell: UITableViewCell {
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var words: UILabel!
     @IBOutlet weak var seat: UILabel!
-  
+    @IBOutlet weak var heart: UIButton!
+    
+    private var house: House?
+    
+    var delegateHouse: FavoriteHouseDelegate?
     
     override func awakeFromNib() {
         
@@ -25,11 +29,30 @@ class HouseTableViewCell: UITableViewCell {
     }
     
     func setHouse(_ house: House) {
+        
+        self.house = house
+        
         self.shield.image = UIImage.init(named: house.imageName)
         self.name.text = house.name
         self.words.text = house.words
         self.seat.text = house.seat
         
+        let favHouse = DataController.shared.isFavoriteHouse(house) ? "heart.fill" : "heart"
+        heart.setImage(UIImage.init(systemName: favHouse), for: .normal)
+        
+    }
+    
+    @IBAction func favoriteHouse(_ sender: Any) {
+        
+        if let housePip = self.house {
+            
+            if DataController.shared.isFavoriteHouse(housePip) {
+                DataController.shared.removeFavoriteHouse(housePip)
+            } else {
+                DataController.shared.addFavoriteHouse(housePip)
+            }
+            self.delegateHouse?.didFavoriteHouseChanged()
+        }
     }
     
     

@@ -7,10 +7,10 @@
 //
 
 import Foundation
-//
-//protocol FavoriteEpisodeDelegate: class {
-//    func didFavEpiChanged()
-//}
+
+protocol FavoriteHouseDelegate: class{
+    func didFavoriteHouseChanged()
+}
 
 protocol FavoriteCastDelegate: class {
     func didFavoriteCastChanged()
@@ -30,8 +30,17 @@ class DataController {
     private var rating: [Rating] = []
     private var favoriteCast: [Int] = []
     private var favoriteEpisode: [Episode] = []
+    private var favoriteHouse: [House] = []
     
-    // MARK: - Favorite Episodes
+    // MARK: - FAVORITE
+    
+    func cleanFavorite () {
+        favoriteCast = []
+        favoriteEpisode = []
+        favoriteHouse = []
+    }
+    
+    // MARK: - Favorite. 1 Episodes
     
     func takeFavoriteEpisode(_ index: Int) -> Episode {
         return favoriteEpisode[index]
@@ -75,7 +84,7 @@ class DataController {
 //        }
 //    }
     
-    // MARK: - Favorite Cast
+    // MARK: - Favorite. 2 Cast
     
     func isFavoriteCast(_ cast: Cast) -> Bool {
         return favoriteCast.contains(cast.id)
@@ -95,9 +104,24 @@ class DataController {
         }
     }
     
-    func cleanFavorite () {
-        favoriteCast = []
-        favoriteEpisode = []
+    // MARK: - Favorite. 3 Houses
+    
+    func isFavoriteHouse(_ house: House) -> Bool {  // Equatable protocol
+        return favoriteHouse.contains(house)
+    }
+    
+    func addFavoriteHouse(_ house: House) {
+        if self.isFavoriteHouse(house) == false {
+            favoriteHouse.append(house)
+        }
+    }
+    
+    func removeFavoriteHouse(_ house: House) {  // Equatable protocol
+        if self.isFavoriteHouse(house) {
+            if let index = favoriteHouse.firstIndex(of: house){
+            favoriteHouse.remove(at: index)
+            }
+        }
     }
     
     // MARK: - Rating

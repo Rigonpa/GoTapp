@@ -8,8 +8,7 @@
 
 import UIKit
 
-class HouseViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
+class HouseViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, FavoriteHouseDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -19,6 +18,13 @@ class HouseViewController: UIViewController, UITableViewDelegate, UITableViewDat
         super.viewDidLoad()
         self.setupUI()
         self.setupData()
+    }
+    
+    // MARK: - DEINIT - Notification Center
+    
+    deinit {
+        let noteName = Notification.Name.init("CleanFavorites")
+        NotificationCenter.default.removeObserver(self, name: noteName, object: nil)
     }
 
     // MARK: - Setup Data
@@ -61,8 +67,17 @@ class HouseViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         tableView.delegate = self
         tableView.dataSource = self
+        
+        let noteName = Notification.Name.init("CleanFavorites")
+        NotificationCenter.default.addObserver(self, selector: #selector(self.didFavoriteHouseChanged), name: noteName, object: nil)
     }
-
+    
+    // MARK: - FavoriteCastDelegate
+    
+    @objc func didFavoriteHouseChanged() {
+        self.tableView.reloadData()
+    }
+    
    
     // MARK: - UITableViewDelegate
     
@@ -92,7 +107,10 @@ class HouseViewController: UIViewController, UITableViewDelegate, UITableViewDat
         if let cell = tableView.dequeueReusableCell(withIdentifier: "HouseTableViewCell", for: indexPath) as? HouseTableViewCell {
             
             let houseSelected = houses[indexPath.row]
-            cell.setHouse(houseSelected)            
+            cell.setHouse(houseSelected)
+            
+            cell.delegateHouse = self
+            
             return cell
         }
         fatalError("Could not create House cell")
