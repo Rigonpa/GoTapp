@@ -25,7 +25,7 @@ class HouseTableViewCell: UITableViewCell {
     }
     
     func setHouse(_ house: House) {
-        self.shield.image = UIImage.init(named: house.shield)
+        self.shield.image = UIImage.init(named: house.imageName)
         self.name.text = house.name
         self.words.text = house.words
         self.seat.text = house.seat

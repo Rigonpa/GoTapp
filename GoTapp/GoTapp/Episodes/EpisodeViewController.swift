@@ -37,13 +37,15 @@ class EpisodeViewController: UIViewController, UITableViewDelegate, UITableViewD
         
     }
     
+    // MARK: - Setup Data
+    
     func setupData(_ seasonNumber: Int) {
         if let pathURL = Bundle.main.url(forResource: "season_\(seasonNumber)", withExtension: "json") {
             do {
-        let data = try Data.init(contentsOf: pathURL) // Este try con exclamación está obligando a que haga la operación si o si - Ahora ya no hay exclamación
-        let decoder = JSONDecoder()
-        episodes = try decoder.decode([Episode].self, from: data)
-        self.tableView.reloadData()
+                let data = try Data.init(contentsOf: pathURL) // Este try con exclamación está obligando a que haga la operación si o si - Ahora ya no hay exclamación
+                let decoder = JSONDecoder()
+                episodes = try decoder.decode([Episode].self, from: data)
+                self.tableView.reloadData()
             } catch {
                 fatalError(error.localizedDescription)
             }
@@ -52,17 +54,7 @@ class EpisodeViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
     }
     
-    func setupUI() {
-        
-        self.title = "Seasons"
-        
-        let nib = UINib.init(nibName: "EpisodeTableViewCell", bundle: nil)
-        tableView.register(nib, forCellReuseIdentifier: "EpisodeTableViewCell")
-        
-        self.tableView.delegate = self // Esto se puede hacer tb desde .xib
-        self.tableView.dataSource = self
-        
-    }
+    // MARK: - Setup Notifications
     
     func setupNotifications() {
         
@@ -77,6 +69,20 @@ class EpisodeViewController: UIViewController, UITableViewDelegate, UITableViewD
         // Clean Favorites
         let noteName = Notification.Name.init(rawValue: "CleanFavorites")
         NotificationCenter.default.addObserver(self, selector: #selector(self.cleanFavorites), name: noteName, object: nil)
+    }
+    
+    // MARK: - Setup UI
+    
+    func setupUI() {
+        
+        self.title = "Seasons"
+        
+        let nib = UINib.init(nibName: "EpisodeTableViewCell", bundle: nil)
+        tableView.register(nib, forCellReuseIdentifier: "EpisodeTableViewCell")
+        
+        self.tableView.delegate = self // Esto se puede hacer tb desde .xib
+        self.tableView.dataSource = self
+        
     }
     
     // MARK: - IBActions

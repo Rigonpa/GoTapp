@@ -13,12 +13,46 @@ class HouseViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     @IBOutlet weak var tableView: UITableView!
     
+    var houses: [House] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupUI()
-
+        self.setupData()
     }
 
+    // MARK: - Setup Data
+    
+    func setupData(){
+        
+        if let pathURL = Bundle.main.url(forResource: "houses", withExtension: "json"){
+            
+            do{
+                let data = try Data.init(contentsOf: pathURL)
+                
+                do{
+                    let decoder = JSONDecoder()
+                    houses = try decoder.decode([House].self, from: data)
+                    tableView.reloadData()
+                    
+                } catch {
+                    fatalError("Failed to storage data in array of specific type")
+                }
+                
+            } catch {
+                fatalError("Failed to read url specified")
+            }
+            
+            
+        } else {
+            fatalError("Not possible to find the resource with that extension")
+        }
+        
+        
+    }
+    
+    // MARK: - Setup UI
+    
     func setupUI() {
         
         self.title = "Houses"
@@ -29,17 +63,7 @@ class HouseViewController: UIViewController, UITableViewDelegate, UITableViewDat
         tableView.dataSource = self
     }
 
-    var houses: [House] = [House.init(name: "Stark", words: "Winter is Coming", shield: "Stark", seat: "Winterfell"),
-                           House.init(name: "Arryn", words: "as High as Honor", shield: "Arryn", seat: "The Eyrie"),
-                           House.init(name: "Baratheon", words: "Ours is the Fury", shield: "Baratheon", seat: "Storm's End"),
-                           House.init(name: "Greyjoy", words: "We Do Not Sow", shield: "Greyjoy", seat: "Salt Throne, Pyke"),
-                           House.init(name: "Lannister", words: "Hear Me Roar!", shield: "Lannister", seat: "Casterly Rock"),
-                           House.init(name: "Martell", words: "Unbowed, Unbent, Unbroken", shield: "Martell", seat: "Sunspear"),
-                           House.init(name: "Targaryen", words: "Fire and Blood", shield: "Targaryen", seat: "Red Keep, King's Landing"),
-                           House.init(name: "Tully", words: "Family, Duty, Honor", shield: "Tully", seat: "Riverrun"),
-                           House.init(name: "Tyrell", words: "Growing Strong", shield: "Tyrell", seat: "Highgarden"),
-                           ]
-    
+   
     // MARK: - UITableViewDelegate
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -48,7 +72,7 @@ class HouseViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //let name = houses[indexPath.row].name
-        let houseDetailVC = HouseDetailViewController.init(house: houses[indexPath.row])
+        let houseDetailVC = HouseDetailViewController.init(withHouse: houses[indexPath.row])
         self.navigationController?.pushViewController(houseDetailVC, animated: true)
         tableView.deselectRow(at: indexPath, animated: true)
     }

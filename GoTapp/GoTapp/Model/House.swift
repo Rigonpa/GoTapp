@@ -9,12 +9,12 @@
 
 import Foundation
 
-struct House{
+struct House: Codable{
 
     
+    var imageName: String
     var name: String
     var words: String
-    var shield: String
     var seat: String
     
 }
@@ -22,9 +22,9 @@ struct House{
 extension House: Equatable {
     static func == (lhs: House, rhs: House) -> Bool {
         return
+            lhs.imageName == rhs.imageName &&
             lhs.name == rhs.name &&
             lhs.words == rhs.words &&
-            lhs.shield == rhs.shield &&
             lhs.seat == rhs.seat
     }
 }

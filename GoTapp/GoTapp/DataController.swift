@@ -102,7 +102,7 @@ class DataController {
     
     // MARK: - Rating
     
-    func rateEpisode (_ episode: Episode, value2: Double) {
+    func rateEpisode (_ episode: Episode, value value2: Double) {
         if self.ratingForEpisode(episode) == nil {
             let rateValue = Rating.init(id: episode.id, rate: .rated(value: value2))
             rating.append(rateValue)
