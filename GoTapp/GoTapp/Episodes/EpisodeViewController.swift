@@ -152,9 +152,9 @@ class EpisodeViewController: UIViewController, UITableViewDelegate, UITableViewD
             cell.setEpisode(ep)
             cell.rateBlock = { () -> Void in
                 
-                let rateVC = RateViewController.init(withEpisode: ep)
+                let rateVC = RateViewController(withEpisode: ep)
                 rateVC.modalPresentationStyle = .fullScreen
-                let navi = UINavigationController.init(rootViewController: rateVC)
+                let navi = UINavigationController(rootViewController: rateVC)
                 self.present(navi, animated: true, completion: nil)
 
             }
@@ -162,25 +162,5 @@ class EpisodeViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
         fatalError("Could not create Episode cell")
     }
-    
-    
-    
-    
-    
-    
-    
-//    @IBAction func openRate(_ sender: Any) {
-//        //Código para abrir pantalla Rate
-//        let rateViewController = RateViewController()
-//
-//        //Para cambiar de transición en el present:
-//        rateViewController.modalTransitionStyle = .crossDissolve
-//        rateViewController.modalPresentationStyle = .fullScreen
-//
-//        self.present(rateViewController, animated: true, completion: nil)
-//        //self.navigationController?.pushViewController(rateViewController, animated: true)
-//
-//
-//    }
     
 }

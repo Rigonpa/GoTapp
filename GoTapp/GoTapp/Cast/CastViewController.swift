@@ -104,12 +104,10 @@ class CastViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "CastTableViewCell", for: indexPath) as? CastTableViewCell{
-            
             let actor = cast[indexPath.row]
             cell.setCast(actor)
             cell.castDelegate = self
             return cell
-            
         }
         fatalError("Could not create Cast cell")
     }

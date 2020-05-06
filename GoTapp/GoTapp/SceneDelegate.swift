@@ -23,29 +23,29 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let houseViewController = HouseViewController()
         let settingsViewController = SettingsViewController()
         
-        let navigationEpisodeViewController = UINavigationController.init(rootViewController: episodeViewController)
-        let navigationCastViewController = UINavigationController.init(rootViewController: castViewController)
-        let navigationFavoriteEpisodeViewController = UINavigationController.init(rootViewController: favoriteEpisodeViewController)
-        let navigationHouseViewController = UINavigationController.init(rootViewController: houseViewController)
-        let navigationSettingsViewController = UINavigationController.init(rootViewController: settingsViewController)
+        let navigationEpisodeViewController = UINavigationController(rootViewController: episodeViewController)
+        let navigationCastViewController = UINavigationController(rootViewController: castViewController)
+        let navigationFavoriteEpisodeViewController = UINavigationController(rootViewController: favoriteEpisodeViewController)
+        let navigationHouseViewController = UINavigationController(rootViewController: houseViewController)
+        let navigationSettingsViewController = UINavigationController(rootViewController: settingsViewController)
         
         let tabBarController = UITabBarController()
         tabBarController.viewControllers = [navigationEpisodeViewController, navigationCastViewController, navigationFavoriteEpisodeViewController, navigationHouseViewController, navigationSettingsViewController]
         
-        navigationEpisodeViewController.tabBarItem = UITabBarItem.init(title: "Seasons", image: UIImage.init(systemName: "film.fill"), tag: 0)
-        navigationCastViewController.tabBarItem = UITabBarItem.init(title: "Cast", image: UIImage.init(systemName: "person.3.fill"), tag: 1)
-        navigationFavoriteEpisodeViewController.tabBarItem = UITabBarItem.init(title: "Fav", image: UIImage.init(systemName: "heart.fill"), tag: 2)
-        navigationHouseViewController.tabBarItem = UITabBarItem.init(title: "Houses", image: UIImage.init(systemName: "shield.lefthalf.fill"), tag: 3)
-        navigationSettingsViewController.tabBarItem = UITabBarItem.init(title: "Settings", image: UIImage.init(systemName: "gear"), tag: 4)
+        navigationEpisodeViewController.tabBarItem = UITabBarItem(title: "Seasons", image: UIImage(systemName: "film.fill"), tag: 0)
+        navigationCastViewController.tabBarItem = UITabBarItem(title: "Cast", image: UIImage(systemName: "person.3.fill"), tag: 1)
+        navigationFavoriteEpisodeViewController.tabBarItem = UITabBarItem(title: "Fav", image: UIImage(systemName: "heart.fill"), tag: 2)
+        navigationHouseViewController.tabBarItem = UITabBarItem(title: "Houses", image: UIImage(systemName: "shield.lefthalf.fill"), tag: 3)
+        navigationSettingsViewController.tabBarItem = UITabBarItem(title: "Settings", image: UIImage(systemName: "gear"), tag: 4)
         
         tabBarController.tabBar.barStyle = .black
         tabBarController.tabBar.isTranslucent = true
-        tabBarController.tabBar.tintColor = UIColor.init(red: 235/255, green: 172/255, blue: 38/255, alpha: 1.0)
+        tabBarController.tabBar.tintColor = UIColor(red: 235/255, green: 172/255, blue: 38/255, alpha: 1.0)
         
         UINavigationBar.appearance().overrideUserInterfaceStyle = .dark
-        UINavigationBar.appearance().tintColor = UIColor.init(red: 235/255, green: 172/255, blue: 38/255, alpha: 1.0)
+        UINavigationBar.appearance().tintColor = UIColor(red: 235/255, green: 172/255, blue: 38/255, alpha: 1.0)
         
-        window = UIWindow.init(frame: windowScene.coordinateSpace.bounds)
+        window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
         window?.rootViewController = tabBarController
         window?.makeKeyAndVisible()

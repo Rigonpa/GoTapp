@@ -16,10 +16,6 @@ protocol FavoriteCastDelegate: class {
     func didFavoriteCastChanged()
 }
 
-//protocol Identifiable { // He tenido que deshacer los 3 métodos genéricos
-//    var id: Int { get }
-//}
-
 class DataController {
     
     static var shared = DataController()
